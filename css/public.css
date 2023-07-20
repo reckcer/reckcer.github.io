@@ -1576,21 +1576,14 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     margin-top: 15px;
   }
 
-  .main-container {
+  .main-container .index {
     flex-direction: column;
   }
 
-  .main-container {
+  .main-container .index-right{
     display: none;
   }
 
-.index {
-  flex-direction: column-reverse;
-}
-
-  .index-right {
-
-  }
 
   .main-container .index-center {
     margin: 15px 0;
