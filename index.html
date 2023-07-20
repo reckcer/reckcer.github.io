@@ -426,66 +426,7 @@
   </div>
 </div>
 
-
-<script>
-  var allImgBoxs = document.querySelectorAll('.index-article--box');
-  var windowHeight = window.innerHeight;
-  var boxs = Array.from(allImgBoxs);
-  var timer = null;
-  boxs.forEach((box, idx) => {
-    if (!window.loadImageSet || !window.loadImageSet.includes(idx)) {
-      box.classList.add('img-loading');
-    } else {
-      const imgDom = box.querySelector('img');
-      imgDom.src = imgDom.dataset.cover;
-    }
-  });
-
-  function scrollFn() {
-    if (timer) {
-      return;
-    }
-    timer = setTimeout(() => {
-      loadImage();
-      timer = null;
-    }, 100)
-  }
-
-  if (!window.loadedImage) {
-    document.addEventListener('scroll', scrollFn);
-  }
-
-  function loadImage() {
-    const doc = document.documentElement;
-    const scrollTop = doc.scrollTop;
-    if (boxs.every(box => box.loadedImage)) {
-      document.removeEventListener('scroll', scrollFn);
-      window.loadedImage = 1;
-      return;
-    }
-    boxs.forEach((box, idx) => {
-      if (box.loadedImage) {
-        return;
-      }
-      if (box.getBoundingClientRect().top < windowHeight) {
-        const imgDom = box.querySelector('img');
-        imgDom.src = imgDom.dataset.cover;
-        imgDom.onload = () => {
-          box.classList.remove('img-loading')
-          box.loadedImage = true;
-          if (window.loadImageSet) {
-            window.loadImageSet.push(idx);
-          } else {
-            window.loadImageSet = [];
-            window.loadImageSet.push(idx);
-          }
-        }
-      }
-    });
-  }
-
-  window.loadImageFn = loadImage;
-</script> </div>
+ </div>
       <div class="main-right-wrapper"><div class="main-right">
   <div class="main-right--board">
     <div class="main-right--title">
@@ -494,11 +435,11 @@
     </div>
     <div class="carousel" id="carousel_main">
       <ul id="div_img">
-          <li class="every_img"><img src="##" id="link_img" onClick="link('#', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="##" id="link_img" onClick="link('_self')" alt="" title="" /></li>
           <li class="every_img"><img src="#', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="##" id="link_img" onClick="link('#', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="#" id="link_img" onClick="link('#', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="#" id="link_img" onClick="link('#/', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="##" id="link_img" onClick="link( '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="#" id="link_img" onClick="link('_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="#" id="link_img" onClick="link( '_self')" alt="" title="" /></li>
       </ul>
       <ul class="div_circle"><li class = every_circle></li><li class = every_circle></li><li class = every_circle></li><li class = every_circle></li><li class = every_circle></li></ul>
       <div class="btn left"><p class="btn_p">《&nbsp</p></div><div class="btn right"><p class="btn_p">&nbsp》</p></div>
