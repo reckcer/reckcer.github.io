@@ -1613,11 +1613,13 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     }
     /* 一开始并不出现 */
     .buttonm2 .ullier{
+      height: 0px;
         opacity: 0;
     }
     /* 选中按钮后出现 */
     .buttonm2:hover .ullier{
         opacity: 1;
+        height: 100%;
     }
 
 
