@@ -304,7 +304,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  /* z-index: 2; */
   transition: all 0.3s;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -1602,6 +1602,24 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     position: absolute;
     left: 6%;
   } */
+
+      /* 初始按钮 */
+      .buttonm2{
+        background-color: #50536e;    width: 100%;
+    height: 30px; }
+  /* 选中按钮的按钮变色 */
+    .buttonm2:hover{
+        background-color: #d15a39;
+    }
+    /* 一开始并不出现 */
+    .buttonm2 .ullier{
+        opacity: 0;
+    }
+    /* 选中按钮后出现 */
+    .buttonm2:hover .ullier{
+        opacity: 1;
+    }
+
 
   .main-container .index-center {
     /* margin: 15px 0; */
