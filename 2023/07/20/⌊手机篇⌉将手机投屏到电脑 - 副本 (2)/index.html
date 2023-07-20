@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>⌊手机篇⌉ 将手机投屏到电脑 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="/css/public.css" />
   <link rel="stylesheet" href="/css/layout.css" />
@@ -15,7 +15,7 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/jquery.pjax.min.js"></script>
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script>document.title = `Hello World`</script>
+  <script>document.title = `⌊手机篇⌉ 将手机投屏到电脑`</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <style>
@@ -274,14 +274,14 @@ pre {
 
 <div class="article-container">
   <div class="article">
-    <h1 class="article-title">Hello World</h1>
+    <h1 class="article-title">⌊手机篇⌉ 将手机投屏到电脑</h1>
     <div class="article-info">
       <div class="article-info--item">
         <div class="article-info--info">
           
           <div class="article-info--categories">
             <span>分类：</span>
-            
+            <a class="category-link" href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87/">电子设备</a>
           </div>
           
           
@@ -290,13 +290,63 @@ pre {
             
           </div>
           
-          <p class="article-info--date">创建日期：2023-07-20 13:07:26</p>
+          <p class="article-info--date">创建日期：2023-07-20 15:02:11</p>
         </div>
         <img src="https://t7.baidu.com/it/u=3652245443,3894439772&fm=193&f=GIF" alt="" class="article-cover">
       </div>
     </div>
     <article class="article-content">
-      <p>1尔萨利夫卡是发生的</p>
+      <p>您需要准备: 1 部手机, 1 部电脑, 1 根数据线. </p>
+<p>您需要保证: a. 电脑和手机处在同一 wifi 下; b. 手机与电脑使用数据线连接起来; c. 打开手机的开发者模式, 在其中已经找到 USB 调试并已经打开它. </p>
+<ol>
+<li>首先, 您需要在电脑上下载 <a target="_blank" rel="noopener" href="https://github.com/Genymobile/scrcpy">scrcpy</a>, 再将下载后的资源解压缩到您喜欢的路径. </li>
+<li>其次, 打开 cmd 后转到您解压缩后的路径, 输入 <code>adb tcpip 5555</code> 回车, 再输入 <code>adb connect 192.168.235.11:5555</code> 回车, 若分别显示 <code>restarting in TCP mode port: 5555</code> 和 <code>connected to 192.168.235.11:5555</code> 则成功. </li>
+<li>再次, 拔掉数据线. </li>
+<li>最后, 在 cmd 中输入 <code>scrcpy --shortcut-mod=lctrl,rctrl</code> 即可. <blockquote>
+<p>mod 键是快捷键的修饰键, 默认是左 Alt, 但在我看来变成 Ctrl 更能方便些, 因此我预备使用命令 <code>scrcpy --shortcut-mod=lctrl,rctrl</code> 来改变修饰键为左 Ctrl 键和右的 Ctrl 键.</p>
+</blockquote>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">全屏</td>
+<td align="center">mod + f</td>
+</tr>
+<tr>
+<td align="center">重置大小, 清除黑边</td>
+<td align="center">mod + g, mod + w</td>
+</tr>
+<tr>
+<td align="center">左右旋转屏幕</td>
+<td align="center">mod + ←, mod + →</td>
+</tr>
+<tr>
+<td align="center">上下调节音量</td>
+<td align="center">mod + ↑, mod + ↓</td>
+</tr>
+<tr>
+<td align="center">切换应用, 返回主屏幕, 返回上一层</td>
+<td align="center">mod + s, mod + h, 右键</td>
+</tr>
+<tr>
+<td align="center">下拉, 下拉二层, 收起通知面板</td>
+<td align="center">mod + n, mod + n + n, mod + Shift + n</td>
+</tr>
+<tr>
+<td align="center">复制, 剪贴, 粘贴文本, 图片等内容</td>
+<td align="center">mod + c, mod + x, mod + v</td>
+</tr>
+<tr>
+<td align="center">关闭, 打开, 旋转设备屏幕</td>
+<td align="center">mod + o, mod + Shift + o, mod + r</td>
+</tr>
+</tbody></table>
 
     </article>
 
@@ -312,13 +362,13 @@ pre {
           
             <p>
               <span>上一篇：</span>
-              <a href="/2023/07/20/⌊手机篇⌉将手机投屏到电脑/">⌊手机篇⌉ 将手机投屏到电脑</a>
+              <a href="/2023/07/20/hello-world - 副本 (2)/">Hello World</a>
             </p>
            
           
             <p>
               <span>下一篇</span>
-              <a href="/2023/07/20/⌊电脑篇⌉电脑的声音无法出席-驱动问题/">⌊电脑篇⌉ 电脑声音无法出现</a>
+              <a href="/2023/07/20/加密测试 - 副本 (2)/">Hello World</a>
             </p>
           
         </div>

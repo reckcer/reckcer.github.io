@@ -1679,6 +1679,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
   }
 
   .main-right-wrapper {
+    z-index: -99;
+    opacity: 0;
     width: 0 !important;
     height: 0;
   }
