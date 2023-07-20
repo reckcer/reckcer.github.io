@@ -1613,6 +1613,7 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     }
     /* 一开始并不出现 */
     .buttonm2 .ullier{
+      position: absolute;
         opacity: 0;
     }
     .buttonm2 .ullier .unullier{
@@ -1624,6 +1625,19 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
         height: 100%;
     }
 
+    .buttonm2:hover .ullier .unullier{
+      height: auto;
+    }
+
+
+    .index-right-wrapper-div-right {
+      margin-top: -14px;
+    }
+
+    .page{
+      height: 50px;
+      margin-top: 1px;
+    }
 
   .main-container .index-center {
     /* margin: 15px 0; */
