@@ -382,6 +382,11 @@ input {
   color: #1e90ff;
   font-weight: bold;
 }
+.buttonm2 span{
+  opacity: 0;
+}
+
+
 
 .article {
   width: calc(100% - 200px);
