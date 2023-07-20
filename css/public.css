@@ -1641,7 +1641,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
 
   .main-left {
     order: 1;
-    width: 100% !important;
+    width: 0 !important;
+    height: 0;
     position: relative !important;
     display: flex;
     flex-wrap: wrap;
@@ -1678,7 +1679,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
   }
 
   .main-right-wrapper {
-    width: 100% !important;
+    width: 0 !important;
+    height: 0;
   }
 
   .main-container {
