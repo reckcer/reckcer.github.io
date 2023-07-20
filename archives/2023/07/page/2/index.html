@@ -384,47 +384,41 @@
         font-size: 20px;
         color: #f4f1de;
     } */
+    /* 初始按钮 */
     .buttonm2{
         background-color: #50536e; width: 170px; height: 65px; text-align: center; transition: .3s; cursor: pointer;
     }
-  
+  /* 选中按钮的按钮变色 */
     .buttonm2:hover{
         background-color: #d15a39;
     }
-    .buttonm2 .ulli:hover{
-        background-color: #ffb29d;
-    }
+    /* 一开始并不出现 */
     .buttonm2 .ulli{
-        height: 0;
-        transition: .2s;
         opacity: 0;
-        transform: translateY(-65px);
-        background-color: #e07a5f;
     }
+    /* 选中按钮后出现 */
     .buttonm2:hover .ulli{
-        height: 65px;
         opacity: 1;
-        transform: translateY(0);
     }
   
 </style>
   <div class="index-right">
     <div class="index-right-wrapper">
       <div class="buttonm2">
-        <span>收藏</span>
-      <div class="index-right-wrapper-div-left ulli">
+      <div class="ulli">
+      <div class="index-right-wrapper-div-left">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">测试区</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87/">电子设备</a></li></ul>
       </div>
       
-    <div class="index-right-wrapper-div-right ulli">
+    <div class="index-right-wrapper-div-right">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">2023年07月</a><span class="archive-list-count">18</span></li></ul>
       </div>
       
-        <div class="page ulli">
+        <div class="page">
           <a class="extend prev" rel="prev" href="/archives/2023/07/">&lt;</a><a class="page-number" href="/archives/2023/07/">1</a><span class="page-number current">2</span>
         </div>
       
-      </div>
+      </div></div>
     </div>
 
 
