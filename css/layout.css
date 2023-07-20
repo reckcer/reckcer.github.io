@@ -398,6 +398,9 @@
   background-color: #fff;
   font-size: 13px;
 }
+.index-right-wrapper-div-right {
+  margin-top: -15px;
+}
 .main-right--power {
   display: flex;
   justify-content: space-between;
