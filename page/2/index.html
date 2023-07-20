@@ -374,7 +374,38 @@
       </div>
     
   </div>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 20px;
+        color: #f4f1de;
+    }
+    .buttonm2{
+        background-color: #50536e; width: 170px; height: 65px; text-align: center; line-height: 65px; transition: .3s; cursor: pointer;
+    }
   
+    .buttonm2:hover{
+        background-color: #d15a39;
+    }
+    .buttonm2 li:hover{
+        background-color: #ffb29d;
+    }
+    .buttonm2 ul li{
+        height: 0;
+        transition: .2s;
+        opacity: 0;
+        transform: translateY(-65px);
+        background-color: #e07a5f;
+    }
+    .buttonm2:hover li{
+        height: 65px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+  
+</style>
   <div class="index-right">
     <div class="index-right-wrapper">
       <div class="buttonm2">
