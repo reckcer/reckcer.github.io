@@ -1576,12 +1576,20 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     margin-top: 15px;
   }
 
-  .main-container .index {
+  .main-container {
     flex-direction: column;
   }
 
-  .main-container .index-right {
+  .main-container {
     display: none;
+  }
+
+.index {
+  flex-direction: column-reverse;
+}
+
+  .index-right {
+
   }
 
   .main-container .index-center {
