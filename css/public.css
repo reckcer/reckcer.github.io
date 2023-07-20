@@ -61,7 +61,7 @@ input {
   width: 140px;
 }
 
-.index-right-wrapper>ul {
+.index-right-wrapper-div>ul {
   width: 100%;
   box-shadow: 0 0 5px #333;
   border-radius: 10px;
