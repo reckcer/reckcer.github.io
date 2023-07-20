@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>数据库实训-Eclipse 连接 MySQL | Hexo</title>
+  <title>多措并举，拓宽就业渠道 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="/css/layout.css" />
@@ -16,7 +16,7 @@
   <script src="/js/jquery.min.js"></script>
   <script src="/js/jquery.pjax.min.js"></script>
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script>document.title = `数据库实训-Eclipse 连接 MySQL`</script>
+  <script>document.title = `多措并举，拓宽就业渠道`</script>
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <style>
@@ -275,14 +275,14 @@ pre {
 
 <div class="article-container">
   <div class="article">
-    <h1 class="article-title">数据库实训-Eclipse 连接 MySQL</h1>
+    <h1 class="article-title">多措并举，拓宽就业渠道</h1>
     <div class="article-info">
       <div class="article-info--item">
         <div class="article-info--info">
           
           <div class="article-info--categories">
             <span>分类：</span>
-            <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E5%8C%BA/">测试区</a>
+            <a class="category-link" href="/categories/%E5%B0%B1%E4%B8%9A/">就业</a>, <a class="category-link" href="/categories/%E5%B0%B1%E4%B8%9A/%E6%AF%95%E4%B8%9A%E7%94%9F/">毕业生</a>
           </div>
           
           
@@ -291,24 +291,43 @@ pre {
             
           </div>
           
-          <p class="article-info--date">创建日期：2023-07-20 15:10:40</p>
+          <p class="article-info--date">创建日期：2023-07-20 21:19:51</p>
           
-          <p>最后修改日期： 2022-11-17 19:37:18 Thursday</p>
+          <p>最后修改日期： 2023-07-20 22:59:02 Thursday</p>
         </div>
         <img src="https://t7.baidu.com/it/u=3652245443,3894439772&fm=193&f=GIF" alt="" class="article-cover">
       </div>
     </div>
     <article class="article-content">
-      <h2 id="1-所需软件"><a href="#1-所需软件" class="headerlink" title="1. 所需软件"></a>1. 所需软件</h2><p>首先，我们来看看我们需要用到的软件</p>
-<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><p>我等打开 Eclipse，依次点击导航栏 “Window-Preferences-Server-Runtime Environments-右边的Add…-添加Apache Tomcat v9.0 版-Browse选择该文件夹所在路径”</p>
-<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><p>我等引入项目，这里项目选用“”。依次点击导航栏“File-Import…-General-Existing Projects into Workspace-选择该文件夹所在路径”.</p>
-<h2 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h2><p>发现有错误，怎么办？别急。<br>右击“JavaWebExample-Build Path-Configure Build Path-Libraries-选中带红x的‘JRE’-右边的Edit-Workspace default JRE(jre1.8.0_333)”<br>可以看到1-6都没有x了。<br>剩下7，依次点击导航栏 “Window-Preferences-Validation-右边的JSON Validator 的两个方框去掉”<br>这样子就可以了。</p>
-<h2 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h2><p>执行“JavaWebExample&#x2F;WebContent&#x2F;chapter6&#x2F;exam18_reg.jsp”发现在Eclipse里面成功运行。<br>如何在浏览器上运行？依次点击导航栏 “Window-Web Browser-里面选择浏览器就可，推荐选用 ‘1 Default system web browser（默认系统网页浏览器）’”</p>
-<h2 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h2><p>先干件这事：将下载的“mysql-connector-java.jar”复制到“JavaWebExample&#x2F;WebContent&#x2F;WEB-INF&#x2F;lib”里面。<br>再然后打开“JavaWebExample&#x2F;Java Resources&#x2F;src&#x2F;chapter6&#x2F;MYSQLDB.java”，将下列代码替换掉源文件的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> public Connection  ConnDB() &#123;</span><br><span class="line">  conn = null;</span><br><span class="line">  try &#123;  </span><br><span class="line">	  String url=&quot;jdbc:mysql://localhost:3306/javaweb?useUnicode=true&amp;character=UTF-8&amp;serverTimezone=UTC&quot;;</span><br><span class="line">	  Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;).newInstance();</span><br><span class="line">	  conn=DriverManager.getConnection(url,&quot;root&quot;,&quot;123456&quot;);</span><br><span class="line">	  return conn;</span><br><span class="line">	&#125;</span><br><span class="line">	catch (Exception fe) &#123;</span><br><span class="line">		System.err.println(&quot;ConnDB(): &quot; + fe.getMessage());</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意第4行的javaweb是需要在数据库里面创建的DataBase。<br>注意第6行的root和123456分别为你自己数据库的用户名和密码。</p>
-<h2 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h2><p>创建数据库后，建表语句在这里：“JavaWebExample&#x2F;WebContent&#x2F;chapter6&#x2F;chapter6.sql”</p>
+      <h3 id="多措并举，拓宽就业渠道"><a href="#多措并举，拓宽就业渠道" class="headerlink" title="多措并举，拓宽就业渠道"></a>多措并举，拓宽就业渠道</h3><ol>
+<li><p>开头+中心论点段：开篇引入+总结+点题<br> 五部门发文取消高校毕业生就业报到证，以便利高校毕业生就业创业。 </p>
+<p> 教育部决定开展2023届高校毕业生就业“百日冲刺”行动。</p>
+</li>
+</ol>
+<p>人社部启动2023年百日千万招聘专项行动，为高校毕业生等群体提供超千万就业岗位。 </p>
+<p>今年以来，各地区各部门认真落实党中央决策部署，把做好高校毕业生等青年就业工作摆在	更加突出的位置，以更大力度持续推出稳岗拓岗促就业政策，形成促进就业的合力。 </p>
+<pre><code>就业稳、人心暖，托底民生，就要拓宽就业渠道，抓住就业这个“牛鼻子”。 
+</code></pre>
+<ol start="2">
+<li><p>分论点1：稳企业+背景+具体措施+总结<br> 拓宽就业渠道，首先要稳住企业这个“基本盘”。【稳企业】</p>
+<p> 企业是吸纳高校毕业生等青年就业的主渠道。企业发展有活力，吸纳就业才有动力。 【背景】</p>
+<p> 扩补贴，一次性吸纳就业补贴政策对象扩展到离校两年内未就业毕业生和登记失业青年；<br> 降税费，招用登记失业半年以上的高校毕业生，可予以定额依次扣减增值税、教育费附加、企业所得税等优惠；<br> 发贷款，小微型企业当年新招用高校毕业生达到一定比例的，可发放创业担保贷款……【具体措施】</p>
+<p> 今年以来，一份份减负稳岗政策“礼包”精准发力，提升企业招用高校毕业生的积极性。政策支持下，餐饮、旅游等一批就业容量大的服务业加快恢复，就业带动作用明显增强。 【总结】</p>
+</li>
+<li><p>分论点2：互联网加+背景+具体措施+总结<br> 拓宽就业渠道，要大力开发新职业这片蓝海。 【分论点2：互联网+衍生的新职业】</p>
+<p> 近年来，数字经济和实体经济深度融合，新产业新业态新模式不断涌现，衍生出许多新的就业增长点。<br> 人工智能训练师、数据库系统工程师、物联网技术人员……这些新职业释放出大量就业新机遇，为高校毕业生等青年创造了广阔发展空间。<br> 据预测，仅智能制造领域，到2025年，我国人才需求将就达900万人，缺口450万人。【背景】</p>
+<p> 当前，各地区各部门对高校毕业生等青年群体广泛开展职业技能培训和就业见习，提升其创新能力和专业素质，并加快新职业规范培育和标准开发。 【具体措施】<br> 这有利于广开就业门路，充分挖掘岗位潜力，拓宽高校毕业生求职视野，增强他们的择业创业能力，形成更多人才红利。 【总结】</p>
+</li>
+<li><p>分论点3：基层+背景+具体措施+总结<br> 拓宽就业渠道，还要用好基层这个干事创业的大舞台。 【去基层】</p>
+<p> 乡村振兴战略全面实施，新型城镇化建设如火如荼，为高校毕业生施展才干、建功立业提供了广阔天地。 【背景】</p>
+<p> 近年来，人力资源社会保障部等部门组织“三支一扶”等基层服务项目。<br> 今年，有关部门继续稳定扩大“特岗计划”“三支一扶”“西部计划”等招聘规模，并按照规定给予优惠政策；<br> 多地公务员招录也向基层、边远地区倾斜。【具体措施】</p>
+<p> <strong>这些政策将有效引导</strong>高校毕业生<strong>扎根一线、砥砺成才，为推进</strong>基层<strong>治理体系和治理能力现代化注入青春力量</strong>。 【总结】</p>
+</li>
+<li><p>结尾：<br> 解决好高校毕业生等青年的就业问题，既<strong>关系实现个人价值和家庭幸福，更关乎国家长远发展和社会和谐稳定</strong>。 </p>
+<p> **展望全年，经济运行回升向好，就业优先政策持续显效，唯有攻坚克难、加倍努力，千方百计做好就业服务，方能提高经济增长的就业带动力，推动经济社会高质量发展。 **</p>
+</li>
+</ol>
+<p>[注：本文选自bilibili公考隔壁班王老师2023年07月20日《就业——申论点对点范文》，并按照我所易于背诵的格式进行修改，仅供学习交流使用。]</p>
 
     </article>
 
@@ -317,23 +336,8 @@ pre {
     <div class="article-catelogue--wrapper">
       <div class="catelogue catelogue-1">
         <h3>目录</h3>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%89%80%E9%9C%80%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">1. 所需软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2"><span class="toc-number">2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3"><span class="toc-number">3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4"><span class="toc-number">4.</span> <span class="toc-text">4.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5"><span class="toc-number">5.</span> <span class="toc-text">5.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6"><span class="toc-number">6.</span> <span class="toc-text">6.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7"><span class="toc-number">7.</span> <span class="toc-text">7.</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%8E%AA%E5%B9%B6%E4%B8%BE%EF%BC%8C%E6%8B%93%E5%AE%BD%E5%B0%B1%E4%B8%9A%E6%B8%A0%E9%81%93"><span class="toc-number">1.</span> <span class="toc-text">多措并举，拓宽就业渠道</span></a></li></ol>
       </div>
-      
-        <div class="catelogue catelogue-2">
-          
-            <p>
-              <span>上一篇：</span>
-              <a href="/2023/07/20/小贴士 - 副本/">小贴士~</a>
-            </p>
-           
-          
-            <p>
-              <span>下一篇</span>
-              <a href="/2023/07/20/⌊电脑篇⌉电脑的声音无法出席-驱动问题 - 副本/">⌊电脑篇⌉ 电脑声音无法出现</a>
-            </p>
-          
-        </div>
       
     </div>
   </div>
