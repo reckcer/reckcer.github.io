@@ -1585,7 +1585,7 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     position: fixed;
   }
 
-  .main-container .index-right .index-right-wrapper{
+  /* .main-container .index-right .index-right-wrapper{
   position: fixed;
   width: 90%;
 }
@@ -1600,7 +1600,7 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     display: inline-flex;
     position: absolute;
     left: 6%;
-  }
+  } */
 
   .main-container .index-center {
     /* margin: 15px 0; */
