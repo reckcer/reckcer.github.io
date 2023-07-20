@@ -1505,7 +1505,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
   }
 
   .header .header-left .header-search {
-    width: 90%;
+    width: 0;
+    height: 0;
     margin: 0 auto;
     opacity: 0;
   }
