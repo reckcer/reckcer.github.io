@@ -150,8 +150,8 @@
       </div>
       <div id="search-layer" class="header-search--layer hidden">
         <p class="title">
-          <span>以下是搜索内容：</span>
-          <span id="close-layer-btn">关闭</span>
+          <span>Erroooor: </span>
+          <span id="close-layer-btn">Err</span>
         </p>
         <ul>
         </ul>
@@ -160,27 +160,27 @@
     <div class="header-right">
       <ul class="header-menu">
         <li>
-          <a href="http://example.com/">
+          <a href="#">
             <i class="header-menu--icon iconfont icon-shouye"></i>
-            <span class="header-menu--span">首页</span>
+            <span class="header-menu--span">Err</span>
           </a>
         </li>
         <li>
-          <a href="http://example.com/log">
+          <a href="#">
             <i class="header-menu--icon iconfont icon-rizhi"></i>
-            <span class="header-menu--span">日志</span>
+            <span class="header-menu--span">Err</span>
           </a>
         </li>
         <li>
-          <a href="http://example.com/link">
+          <a href="#">
             <i class="header-menu--icon iconfont icon-youqinglianjie"></i>
-            <span class="header-menu--span">友情链接</span>
+            <span class="header-menu--span">Err</span>
           </a>
         </li>
         <li>
-          <a href="http://example.com/about">
+          <a href="#">
             <i class="header-menu--icon iconfont icon-guanyuwomen"></i>
-            <span class="header-menu--span">关于我</span>
+            <span class="header-menu--span">Err</span>
           </a>
         </li>
       </ul>
@@ -188,47 +188,7 @@
   </div>
 </header>
 
-<script>
-  const ipt = document.querySelector('#search-input')
-  const btn = document.querySelector('#search-btn')
-  const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"Hello World","path":"2023/07/20/hello-world/"},{"title":"⌊手机篇⌉ 将手机投屏到电脑","path":"2023/07/20/⌊手机篇⌉将手机投屏到电脑/"},{"title":"⌊电脑篇⌉ 电脑声音无法出现","path":"2023/07/20/⌊电脑篇⌉电脑的声音无法出席-驱动问题/"},{"title":"数据库实训-Eclipse 连接 MySQL","path":"2023/07/20/数据库实训-Eclipse连接Mysql/"},{"title":"Hello World","path":"2023/07/20/加密测试/"},{"title":"小贴士~","path":"2023/07/20/小贴士/"}]`)
-  ipt.addEventListener('keyup', e => {
-    if (e.key === 'Enter') {
-      handleSearch()
-    }
-  })
-  btn.addEventListener('click', () => {
-    handleSearch()
-  })
-
-  document.querySelector('#close-layer-btn').addEventListener('click', () => {
-    layer.classList.toggle('hidden')
-  })
-
-  function handleSearch() {
-    if (ipt.value.trim() === '') {
-      return
-    }
-    let html = ''
-    const targetPosts = posts.filter(post => post.title.includes(ipt.value))
-    targetPosts.forEach(post => {
-      html += `
-        <li>
-          <div>
-            <a href="/${post.path}">${post.title.replace(new RegExp(ipt.value), `<span>${ipt.value}</span>`)}</a>
-          </div>
-          <img src="${post.cover || '/imgs/default-cover.webp' }" />
-        </li>
-      `
-    })
-    if (html.trim () === '') {
-      html += '<p class="empty">没有搜索到内容</p>'
-    }
-    layer.querySelector('ul').innerHTML = html
-    layer.classList.remove('hidden')
-  }
-</script> 
+ 
     <section id="main" class="main">
       <div class="main-left-wrapper">
 <div class="main-left">
@@ -237,43 +197,43 @@
       <style>
 
       </style>
-      <img src="/imgs/avatar.jpg"" class="main-left--avatar" />
+      <img src="###" class="main-left--avatar" />
       <div class="main-left--intro">
-        <p class="main-left--name">KoiNL.</p>
+        <p class="main-left--name">Error.</p>
         <div class="main-left--tags" style="text-align: right;">
-          <span class="main-left--tag">愿世间美好</span>
-          <span class="main-left--tag">温柔以待</span>
+          <span class="main-left--tag">Erro</span>
+          <span class="main-left--tag">Errr</span>
         </div>
       </div>
     </div>
   
     <div>
       <div class="main-left--motto">
-        <p>“锦鲤握运，未离我韵”</p>
-        <p>“愿好运常在”</p>
+        <p>“Errrrrrror”</p>
+        <p>“Err”</p>
       </div>
       <div class="main-left--github">
         <span class="line"></span>
-        <a target="_blank" rel="noopener" href="https://github.com/koinl"><i class="logo iconfont icon-github-fill"></i></a>
+        <a href="#"><i class="logo iconfont icon-github-fill"></i></a>
         <span class="line"></span>
       </div>
       <div class="main-left--statics">
-        <a href="/categories">
+        <a href="#">
           <div>
-            <span>2</span>
-            <span>分类</span>
+            <span>error</span>
+            <span>Err</span>
           </div>
         </a>
-        <a href="/tags">
+        <a href="#">
           <div>
-            <span>0</span>
-            <span>标签</span>
+            <span>error</span>
+            <span>Err</span>
           </div>
         </a>
-        <a href="/archives">
+        <a href="#">
           <div>
-            <span>1 </span>
-            <span>归档</span>
+            <span>error </span>
+            <span>Err</span>
           </div>
         </a>
       </div>
@@ -282,66 +242,36 @@
 
   <div class="main-left--block">
     <ul class="main-left--menu">
-      
         <li>
-          <a href="/">
-            <span class="header-menu--span">小站首页</span>
-            <i class="header-menu--icon iconfont icon-shouye"></i>
+          <a href="#>">
+            <span class="header-menu--span">#></span>
+            <i class="header-menu--icon iconfont #"></i>
           </a>
         </li>
-      
-        <li>
-          <a href="/log">
-            <span class="header-menu--span">个人日志</span>
-            <i class="header-menu--icon iconfont icon-rizhi"></i>
-          </a>
-        </li>
-      
-        <li>
-          <a href="/link">
-            <span class="header-menu--span">友情链接</span>
-            <i class="header-menu--icon iconfont icon-youqinglianjie"></i>
-          </a>
-        </li>
-      
-        <li>
-          <a href="/about">
-            <span class="header-menu--span">关于自己</span>
-            <i class="header-menu--icon iconfont icon-guanyuwomen"></i>
-          </a>
-        </li>
-      
-        <li>
-          <a href="/tools">
-            <span class="header-menu--span">我的工具</span>
-            <i class="header-menu--icon iconfont icon-gongju"></i>
-          </a>
-        </li>
-      
     </ul>
   </div>
 
   <div class="main-left--block">
     <div class="main-left--site">
       <h5 class="main-left--title">
-        <span>站点信息</span>
+        <span>Err</span>
         <i class="iconfont icon-zhandian"></i>
       </h5>
       <p class="main-left--subtitle">
-        <span>文章数目：</span>
-        <span>6 篇</span>
+        <span>Err: </span>
+        <span>Err</span>
       </p>
       <p class="main-left--subtitle">
-        <span>最近动态：</span>
-        <span>今天</span>
+        <span>Err: </span>
+        <span>Err</span>
       </p>
       <p class="main-left--subtitle">
-        <span>上线时间：</span>
-        <span>551天</span>
+        <span>Err: </span>
+        <span>Err</span>
       </p>
       <p class="main-left--subtitle">
-        <span>当前版本：</span>
-        <span>v3.0.0</span>
+        <span>Err: </span>
+        <span>verr</span>
       </p>
     </div>
   </div>
@@ -444,20 +374,7 @@ pre {
       <p>1尔萨利夫卡是发生的</p>
 
     </article>
-    
-    <div class="read-nums">
-      <!-- id 将作为查询条件 -->
-      <span id="2023/07/20/加密测试/" class="leancloud_visitors" data-flag-title="Your Article Title">
-        <em class="post-meta-item-text">浏览量</em>
-        <i class="leancloud-visitors-count"></i>
-      </span>
-    </div>
-    <div class="comments-intro">
-      <h2>评论区</h2>
-      <p>欢迎你留下宝贵的意见，昵称输入QQ号会显示QQ头像哦~</p>
-    </div>
-    <div id="vcomments" class="vcomments"></div>
-    
+
   </div>
   <div class="article-catelogue">
     <div class="article-catelogue--wrapper">
@@ -486,22 +403,6 @@ pre {
 </div>
 
 <script src="http://cdn.yangxiang.cc/prism.js"></script>
-
-<script>
-  // var定义，避免pjax重新进来造成的重复声明错误
-  var config = JSON.parse('{"enable":true,"appId":"Pf8zCXGEH1qsprnWfikVVujL-gzGzoHsz","appKey":"qOqoiUHhH1TGtLRUYURkLRQX","placeholder":"请留下你宝贵的意见吧~","meta":["nick"],"recordIP":true,"visitor":true,"enableQQ":true}')
-  new Valine({
-    el: '#vcomments',
-    appId: config.appId,
-    appKey: config.appKey,
-    placeholder: config.placeholder,
-    meta: config.meta,
-    recordIP: config.recordIP,
-    visitor: config.visitor,
-    enableQQ: config.enableQQ,
-    path: '2023/07/20/加密测试/'
-  })
-</script>
 
 
 <script>
@@ -557,43 +458,40 @@ initCopyCode();
     </div>
     <div class="carousel" id="carousel_main">
       <ul id="div_img">
-          <li class="every_img"><img src="/imgs/cover/LunBoTu/pan.jpg" id="link_img" onClick="link('https://www.csdn.net/', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="/imgs/cover/LunBoTu/development_log.jpg" id="link_img" onClick="link('https://koinl.github.io/development_log/', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="/imgs/cover/LunBoTu/home_welcome.jpg" id="link_img" onClick="link('https://koinl.github.io/page_home/', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="/imgs/cover/LunBoTu/Picture_APP_By_KoiNL.jpg" id="link_img" onClick="link('https://koinl.github.io/apk/APP_By_KoiNL.apk', '_self')" alt="" title="" /></li>
-          <li class="every_img"><img src="/imgs/cover/LunBoTu/new_blog_theme.jpg" id="link_img" onClick="link('https://koinl.github.io/', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="##" id="link_img" onClick="link('#', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="#', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="##" id="link_img" onClick="link('#', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="#" id="link_img" onClick="link('#', '_self')" alt="" title="" /></li>
+          <li class="every_img"><img src="#" id="link_img" onClick="link('#/', '_self')" alt="" title="" /></li>
       </ul>
       <ul class="div_circle"><li class = every_circle></li><li class = every_circle></li><li class = every_circle></li><li class = every_circle></li><li class = every_circle></li></ul>
       <div class="btn left"><p class="btn_p">《&nbsp</p></div><div class="btn right"><p class="btn_p">&nbsp》</p></div>
   </div>
   <script type="text/javascript">$(function () { var max_num = 4; var time_stop = 4250; var time_swap = 1250; var num = 0; var chosen_circle_color = "#0aa1ed"; var chosen_not_circle_color = "#ffffff"; function every_thing() { $("#div_img").animate({ left: -$(".every_img").eq(0).width() * num }, time_swap); $(".every_circle").eq(num).css("background", chosen_circle_color).siblings('li').css("background", chosen_not_circle_color); } function Right_move() { if (num >= max_num) { num = 0; } else { num++; } every_thing(); } function Left_move() { if (num === 0) { num = max_num; } else { num--; } every_thing(); } $(".every_circle").eq(0).css("background", chosen_circle_color); $("#div_img").width($('.every_img').length * $('.every_img').eq(0).width()); var id = setInterval(Right_move, time_stop); $("#carousel_main").mouseover(function () { clearInterval(id) }); $("#carousel_main").mouseout(function () { id = setInterval(Right_move, time_stop); }); $(".left").click(function () { $("#div_img").stop(); Left_move(); }); $(".right").click(function () { $("#div_img").stop(); Right_move(); }); $(".every_circle").mouseover(function () { num = $(this).index(); $("#div_img").stop(); every_thing(); }); }); function link(jinliweili_Url, quality_target) { window.open(jinliweili_Url, quality_target);}</script>
     <div class="main-right--content">
-      Hello~近期剽窃本站内容频发，本站唯一指定网站：https://koinl.github.io。请认准。点击<a target="_blank" rel="noopener" href="https://koinl.github.io">点击此处</a>选择进入。
-    </div>
+      Errooooooooooooooooooooooooooooooooooooooooooooor</div>
   </div>
 
   <div id="aplayer" class="main-right--music"></div>
 
   <div class="operate-items">
     <div class="operate-item backtop">
-      <i class="iconfont icon-huidaodingbu"></i>
-      <span>回到顶部</span>
+      <i class="iconfont icuid"></i>
+      <span>Err</span>
     </div>
-    
-    <div class="operate-item turn-comment hidden">
-      <i class="iconfont icon-pinglun"></i>
-      <span>查看评论</span>
+    <div class="operate-item turden">
+      <i class="iconfont icglun"></i>
+      <span>Err</span>
     </div>
-    
   </div>
 
   <div class="main-right--site">
     <div class="main-right--power">
-      <p>Power By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>.</p>
+      <p>ERROR.</p>
 
-      <p>Theme：<a href="">koinl.</a></p>
+      <p>error.</p>
     </div>
-    <p class="main-right--refer"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">信息来源于锦鲤未离</a> </p>
+    <p class="main-right--refer">err</p>
   </div>
 </div>
 
@@ -623,7 +521,7 @@ initCopyCode();
   }
 
   setOperateItem()
-  const musics = JSON.parse(`[{"name":"路过人间的情书","artist":"陈恒媛","url":"music/路过人间的情书.mp3","cover":"http://p2.music.126.net/bRIshzdt9OWH0QvqHwfxjQ==/109951166380164291.jpg?param=177y177"},{"name":"安河桥","artist":"宋冬野","url":"http://ting6.yymp3.net:82/new25/songdongye/11.mp3","cover":"https://img2.baidu.com/it/u=1260056724,1076343118&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"},{"name":"卡布达","artist":"暂无","url":"music/kabuda.mp3","cover":"https://img2.baidu.com/it/u=705831265,2862720033&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500"}]`)
+  const musics = JSON.parse(`[{"name":"Error","artist":"err","url":"ERR","cover":"/OR"},{"name":"Error","artist":"err","url":"ERR","cover":"/OR"},{"name":"Error","artist":"err","url":"ERR","cover":"/OR"}]`)
   const ap = new APlayer({
     container: document.querySelector('#aplayer'),
     audio: musics,
