@@ -1618,6 +1618,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     .buttonm2 .ullier{
       position: absolute;
         opacity: 0;
+        height: 0;
+        width: 0;
     }
     .buttonm2 .ullier .unullier{
       /* height: 0px; */
@@ -1626,6 +1628,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     .buttonm2:hover .ullier{
         opacity: 1;
         /* height: 100%; */
+        height: auto;
+        width: auto;
     }
 
     .buttonm2:hover .ullier .unullier{
