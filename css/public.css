@@ -1608,11 +1608,15 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
 
       /* 初始按钮 */
       .buttonm2{
-        background-color: #50536e;    width: 100%;
+        position: fixed;
+        left: 33%;
+        width: 33%;
+        top: 3%;
+        background-color: #50536e;
     height: 30px; }
   /* 选中按钮的按钮变色 */
     .buttonm2:hover{
-        background-color: #d15a39;
+        background-color: #0000;
     }
     /* 一开始并不出现 */
     .buttonm2 .ullier{
