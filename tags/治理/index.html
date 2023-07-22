@@ -52,7 +52,41 @@
     to { transform: translateY(0) ; opacity: 1; }
   }
 </style>
-<body>
+<style>
+  .radial-gradient-demo_Thanks {
+      background-color: #9cb7d0d4;
+      background-image: radial-gradient(closest-side, #87a8c9, rgba(235, 105, 78, 0)), radial-gradient(closest-side, rgb(255 201 150), rgba(243, 11, 164, 0)), radial-gradient(closest-side, rgb(255 190 196), rgba(254, 234, 131, 0)), radial-gradient(closest-side, rgb(225 184 132), rgba(170, 142, 245, 0));
+      background-size: 130vw 130vh, 120vw 120vh, 100vw 150vh, 120vw 130vh;
+      background-position: -80vw -80vh, 30vw -20vh, -20vw 20vh, 30vw 20vh;
+      background-repeat: no-repeat;
+      animation: 15s moiveAnimation infinite;
+  }
+
+  @keyframes moiveAnimation {
+
+      0%,
+      100% {
+          background-size: 130vw 130vh, 120vw 120vh, 100vw 150vh, 120vw 130vh;
+          background-position: -80vw -80vh, 30vw -20vh, -20vw 20vh, 30vw 20vh;
+      }
+
+      25% {
+          background-size: 120vw 120vh, 130vw 150vh, 130vw 120vh, 100vw 110vh;
+          background-position: -30vw -30vh, 40vw -10vh, 0vw 10vh, -10vw 20vh;
+      }
+
+      50% {
+          background-size: 130vw 130vh, 140vw 100vh, 100vw 150vh, 90vw 110vh;
+          background-position: 10vw -60vh, 20vw 10vh, 10vw 30vh, 10vw -20vh;
+      }
+
+      75% {
+          background-size: 140vw 140vh, 100vw 130vh, 100vw 150vh, 130vw 110vh;
+          background-position: -70vw -70vh, 0vw -10vh, 30vw -20vh, 20vw 30vh;
+      }
+  }
+</style>
+<body class="radial-gradient-demo_Thanks">
 
   <div id="container" class="container w-100 vh-100">
     <header class="header">
@@ -213,7 +247,7 @@
         </div>
         <div class="index-article--content">
           
-          <a href="/2023/07/21/%E7%AC%AC29%E5%91%A820230721%20%E8%AE%A9%E7%A4%BE%E5%8C%BA%E6%88%90%E4%B8%BA%E5%B9%B8%E7%A6%8F%E5%AE%B6%E5%9B%AD/">『跟着日报学申论』让社区成为幸福家园 </a>
+          <a href="/2023/07/21/%E7%AC%AC29%E5%91%A820230721%E6%98%9F%E6%9C%9F%E4%BA%94%20%E8%AE%A9%E7%A4%BE%E5%8C%BA%E6%88%90%E4%B8%BA%E5%B9%B8%E7%A6%8F%E5%AE%B6%E5%9B%AD/">『跟着日报学申论』让社区成为幸福家园 </a>
               
           <div>
             <p>创建于  2023-07-21 21:38:08 Friday</p>
