@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background: url("https://t7.baidu.com/it/u=904817117,194777128&fm=193&f=GIF") repeat;
+  /* background: url("https://t7.baidu.com/it/u=904817117,194777128&fm=193&f=GIF") repeat; */
   background-size: 100% 130%;
   background-attachment: fixed;
   padding-top: 100px;
@@ -28,7 +28,8 @@
   justify-content: center;
   align-items: flex-start;
   padding-top: 20px;
-  box-shadow: 0 0 5px #333;
+  /* box-shadow: 0 0 5px #333; */
+  box-shadow: 0 0 1px #ffccb3;
   backdrop-filter: blur(2px);
   opacity: 0.4;
 }
@@ -40,7 +41,7 @@
   opacity: 0.8;
   left: 0;
   top: 0;
-  background: url("https://t7.baidu.com/it/u=924185248,2715642622&fm=193&f=GIF") no-repeat;
+  /* background: url("https://t7.baidu.com/it/u=924185248,2715642622&fm=193&f=GIF") no-repeat; */
   background-size: cover;
 }
 .header-wrapper {
