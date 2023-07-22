@@ -1629,11 +1629,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
         width: 0;
         margin-top: 25px;
     }
-    .buttonm2 .ullier .unullier ul{
-      height: 0px;
-    }
     .buttonm2 .ullier .unullier{
-      height: 0px;
+      /* height: 0px; */
     }
     /* 选中按钮后出现 */
     .buttonm2:hover .ullier{
@@ -1643,8 +1640,8 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
         width: auto;
     }
 
-    .buttonm2:hover .ullier .unullier ul{
-      height: auto;
+    .buttonm2:hover .ullier .unullier{
+      /* height: auto; */
     }
 
 
