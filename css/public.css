@@ -1635,6 +1635,9 @@ div.code-toolbar>.toolbar>.toolbar-item>span:hover {
     .buttonm2 .ullier .unullier{
       height: 0;
     }
+    .buttonm2:hover .ullier .unullier{
+      height: auto;
+    }
     /* 选中按钮后出现 */
     .buttonm2:hover .ullier{
         opacity: 1;
