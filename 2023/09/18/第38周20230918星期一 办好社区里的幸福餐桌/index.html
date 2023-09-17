@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>办好社区里的“幸福餐桌” | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/public.css" />
+  <link rel="stylesheet" href="/css/iconfont.css" />
+  <link rel="stylesheet" href="/css/APlayer.min.css" />
+  <link rel="stylesheet" href="/css/hlight-main.css" />
+  <script src="/js/APlayer.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.pjax.min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>document.title = `办好社区里的“幸福餐桌”`</script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<style>
+
+
+  .progress {
+    position: fixed;
+    left: 0; top: 0;
+    width: 0;
+    height: 3px;
+    background-color: green;
+    transition: all cubic-bezier(0.215, 0.610, 0.355, 1) .1s;
+    z-index: 9999;
+  }
+
+  .to-up {
+    animation: toUp .5s 1;
+  }
+  .gray {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    display: none;
+    pointer-events: none;
+    background-color: #000;
+    mix-blend-mode: color;
+  }
+  @keyframes toUp {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0) ; opacity: 1; }
+  }
+</style>
+<style>
+  .radial-gradient-demo_Thanks {
+      background-color: #9cb7d0d4;
+      background-image: radial-gradient(closest-side, #87a8c9, rgba(235, 105, 78, 0)), radial-gradient(closest-side, rgb(255 201 150), rgba(243, 11, 164, 0)), radial-gradient(closest-side, rgb(255 190 196), rgba(254, 234, 131, 0)), radial-gradient(closest-side, rgb(225 184 132), rgba(170, 142, 245, 0));
+      background-size: 130vw 130vh, 120vw 120vh, 100vw 150vh, 120vw 130vh;
+      background-position: -80vw -80vh, 30vw -20vh, -20vw 20vh, 30vw 20vh;
+      background-repeat: no-repeat;
+      animation: 15s moiveAnimation infinite;
+  }
+
+  @keyframes moiveAnimation {
+
+      0%,
+      100% {
+          background-size: 130vw 130vh, 120vw 120vh, 100vw 150vh, 120vw 130vh;
+          background-position: -80vw -80vh, 30vw -20vh, -20vw 20vh, 30vw 20vh;
+      }
+
+      25% {
+          background-size: 120vw 120vh, 130vw 150vh, 130vw 120vh, 100vw 110vh;
+          background-position: -30vw -30vh, 40vw -10vh, 0vw 10vh, -10vw 20vh;
+      }
+
+      50% {
+          background-size: 130vw 130vh, 140vw 100vh, 100vw 150vh, 90vw 110vh;
+          background-position: 10vw -60vh, 20vw 10vh, 10vw 30vh, 10vw -20vh;
+      }
+
+      75% {
+          background-size: 140vw 140vh, 100vw 130vh, 100vw 150vh, 130vw 110vh;
+          background-position: -70vw -70vh, 0vw -10vh, 30vw -20vh, 20vw 30vh;
+      }
+  }
+</style>
+
+<body class="radial-gradient-demo_Thanks">
+  <!-- 新增加载效果 2023、08、06 08:11 -->
+  <style>
+    .loading {
+      --speed-of-animation: 0.9s;
+      --gap: 6px;
+      --first-color: #4c86f9;
+      --second-color: #49a84c;
+      --third-color: #f6bb02;
+      --fourth-color: #f6bb02;
+      --fifth-color: #2196f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 6px;
+      height: 100vh;
+      background: var(--bg-color);
+    }
+    
+    .loading span {
+      width: 4px;
+      height: 50px;
+      background: var(--first-color);
+      animation: scale var(--speed-of-animation) ease-in-out infinite;
+    }
+    
+    .loading span:nth-child(2) {
+      background: var(--second-color);
+      animation-delay: -0.8s;
+    }
+    
+    .loading span:nth-child(3) {
+      background: var(--third-color);
+      animation-delay: -0.7s;
+    }
+    
+    .loading span:nth-child(4) {
+      background: var(--fourth-color);
+      animation-delay: -0.6s;
+    }
+    
+    .loading span:nth-child(5) {
+      background: var(--fifth-color);
+      animation-delay: -0.5s;
+    }
+    
+    @keyframes scale {
+    
+      0%,
+      40%,
+      100% {
+      transform: scaleY(0.05);
+      }
+    
+      20% {
+      transform: scaleY(1);
+      }
+    }</style>
+  <div class="loading">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <script>
+    document.onreadystatechange = function() {
+      console.log(document.readyState);
+      if (document.readyState == "complete") {
+        $(".loading").fadeOut();
+      } else {
+        $(".app").fadeOut();
+      }
+    }
+  </script>
+  
+  <div id="container" class="container w-100 vh-100">
+    <header class="header">
+  <div class="header-wrapper">
+    <div class="header-left">
+      <div class="header-search">
+        <input id="search-input" type="text" class="header-search--input" placeholder="ERRRROOOOOOR..." />
+        <span id="search-btn" class="header-search--icon"><i class="iconfont icon-sousuo"></i></span>
+      </div>
+      <div id="search-layer" class="header-search--layer hidden">
+        <p class="title">
+          <span>Erroooor: </span>
+          <span id="close-layer-btn">Err</span>
+        </p>
+        <ul>
+        </ul>
+      </div>
+    </div>
+    <div class="header-right">
+      <ul class="header-menu">
+        <li>
+          <a>
+            <i class="header-menu--icon iconfont iconuye">ER </i>
+            <span class="header-menu--span">Err</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="header-menu--icon iconfont ihi">ER </i>
+            <span class="header-menu--span">Err</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="header-menu--icon iconfont iglianjie">ER </i>
+            <span class="header-menu--span">Err</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <i class="header-menu--icon iconfont inyuwomen">ER </i>
+            <span class="header-menu--span">Err</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+ 
+    <section id="main" class="main">
+      <div class="main-left-wrapper">
+<div class="main-left">
+  <div class="main-left--block">
+    <div class="main-left--info">
+      <style>
+
+      </style>
+      <img src="###" class="main-left--avatar" />
+      <div class="main-left--intro">
+        <p class="main-left--name">Error.</p>
+        <div class="main-left--tags" style="text-align: right;">
+          <span class="main-left--tag">Erro</span>
+          <span class="main-left--tag">Errr</span>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <div class="main-left--motto">
+        <p>“Errrrrrror”</p>
+        <p>“Err”</p>
+      </div>
+      <div class="main-left--github">
+        <span class="line"></span>
+        <a><i class="logo iconfont icon-github-fill"></i></a>
+        <span class="line"></span>
+      </div>
+      <div class="main-left--statics">
+        <a>
+          <div>
+            <span>error</span>
+            <span>Err</span>
+          </div>
+        </a>
+        <a>
+          <div>
+            <span>error</span>
+            <span>Err</span>
+          </div>
+        </a>
+        <a>
+          <div>
+            <span>error </span>
+            <span>Err</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-left--block">
+    <ul class="main-left--menu">
+        <li>
+          <a>
+            <span class="header-menu--span">#####></span>
+            <i class="header-menu--icon iconfont #">ERR</i>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span class="header-menu--span">#####></span>
+            <i class="header-menu--icon iconfont #">ERR</i>
+          </a>
+        </li>
+        <li>
+          <a>
+            <span class="header-menu--span">#####></span>
+            <i class="header-menu--icon iconfont #">ERR</i>
+          </a>
+        </li>
+    </ul>
+  </div>
+
+  <div class="main-left--block">
+    <div class="main-left--site">
+      <h5 class="main-left--title">
+        <span>Err</span>
+        <i class="iconfont icandian"> Err</i>
+      </h5>
+      <p class="main-left--subtitle">
+        <span>Err: </span>
+        <span>Err</span>
+      </p>
+      <p class="main-left--subtitle">
+        <span>Err: </span>
+        <span>Err</span>
+      </p>
+      <p class="main-left--subtitle">
+        <span>Err: </span>
+        <span>Err</span>
+      </p>
+      <p class="main-left--subtitle">
+        <span>Err: </span>
+        <span>verr</span>
+      </p>
+    </div>
+  </div>
+</div></div>
+      <div id="main-container" class="main-container">
+
+
+  <style>
+/* 代码块复制按钮 */
+.highlight {
+    /* 方便copy代码按钮（btn-copy）的定位 */
+    position: relative;
+}
+.btn-copy {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    -webkit-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    padding: 2px 6px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 0;
+}
+.btn-copy span {
+    margin-left: 5px;
+}
+.highlight:hover .btn-copy {
+    opacity: 1;
+}
+
+pre::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background-color:#F5F5F5;
+}
+/*定义滚动条轨道
+内阴影+圆角*/
+pre::-webkit-scrollbar-track {
+  background-color:#F5F5F5;
+}
+/*定义滑块
+内阴影+圆角*/
+pre::-webkit-scrollbar-thumb {
+  background-color: rgb(69, 83, 100);
+}
+
+pre:active {
+  background-color: rgb(81, 95, 116);
+}
+pre {
+  width: 100% !important;
+	    float: left !important;
+	    overflow: hidden !important;
+	    text-overflow: ellipsis !important;
+	    /* white-space: normal !important; */
+}
+
+
+</style>
+
+<div class="article-container">
+  <div class="article">
+    <h1 class="article-title">办好社区里的“幸福餐桌”</h1>
+    <div class="article-info">
+      <div class="article-info--item">
+        <div class="article-info--info">
+          
+          <div class="article-info--categories">
+            <span>分类：</span>
+            <a class="category-link" href="/categories/%E8%B7%9F%E7%9D%80%E6%97%A5%E6%8A%A5%E5%AD%A6%E7%94%B3%E8%AE%BA/">跟着日报学申论</a>
+          </div>
+          
+          
+          <div class="article-info--tags">
+            <span>标签：</span>
+            <a class="tag-link" href="/tags/%E7%A4%BE%E5%8C%BA%E9%A3%9F%E5%A0%82/" rel="tag">社区食堂</a><a class="tag-link" href="/tags/%E8%80%81%E5%B9%B4%E4%BA%BA/" rel="tag">老年人</a>
+          </div>
+          
+          <p class="article-info--date">创建日期：2023-09-18 21:26:35</p>
+          
+          <p>最后修改日期： 2023-09-17 21:53:00 Sunday</p>
+        </div>
+        <img src="https://img1.baidu.com/it/u=3840473512,1088605131&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=746" alt="" class="article-cover">
+      </div>
+    </div>
+    <article class="article-content" style="font-family: monospace;font-size: 15px;text-indent: 2em;">
+      <h4 id="1-开头：开篇引入"><a href="#1-开头：开篇引入" class="headerlink" title="1.开头：开篇引入"></a>1.开头：开篇引入</h4><p>近年来，社区食堂在全国<strong>遍地开花、加速发展</strong>。【发展迅速】</p>
+<p>因为方便、便宜，老年人就餐有补助，尤为社区老人青睐。</p>
+<p>有的社区食堂还成了快递员、送餐员等户外劳动者休息和聚餐的好去处。【其他作用，对“新就业群体”的服务功能】</p>
+<h4 id="2-中心论点段"><a href="#2-中心论点段" class="headerlink" title="2.中心论点段"></a>2.中心论点段</h4><p>为完善老年助餐服务，推进社区食堂建设，中央和各地都出台了相应政策。</p>
+<p>去年10月，住房城乡建设部、民政部联合发布《关于开展完整社区建设试点工作的通知》，提出，试点社区应规划配建食堂等便民商业服务设施。</p>
+<p>今年7月，商务部等13部门制定的《全面推进城市一刻钟便民生活圈建设三年行动计划（2023—2025）》中提到，“探索发展社区食堂，建立老年人助餐服务网络”。</p>
+<p>各地民政部门也根据实际情况，对食堂建设、老年人用餐等给予不同程度的补助。</p>
+<p>小食堂牵动大民生，想要让社区食堂拥有更广阔的发展空间，受到更多居民的欢迎，还需要在品质和创新上继续下功夫。</p>
+<h4 id="3-分论点1"><a href="#3-分论点1" class="headerlink" title="3.分论点1"></a>3.分论点1</h4><p>丰富供给，让居民吃得安心舒心。</p>
+<p>价格实惠，菜品家常是社区食堂的主要特点之一。</p>
+<p>如今，除了保证食品安全这一硬性要求外，一些地方在其他方面也进行了诸多探索，让餐饮服务更完善：</p>
+<p>有的社区推出<strong>个性化订餐</strong>，组织上门就餐或启动流动餐车，吃饭更方便；有的社区推出小份菜、半份菜或无糖餐等<strong>模式</strong>，选择更多样；有的社区食堂安装带有<strong>显示屏的备餐台</strong>，上面显示着菜品的蛋白质、脂肪等成分配比，设备更智能。</p>
+<p>不断完善的软件服务，让更多居民享受到舌尖上的幸福。【让社区、老人获得感成色更足】</p>
+<h4 id="4-分论点2"><a href="#4-分论点2" class="headerlink" title="4.分论点2"></a>4.分论点2</h4><p>创新运营，不断提高居民好感度。【一个社会的文明进步，人民群众的获得感和幸福感，往往就是从点滴细节中得到的】</p>
+<p>据报道，在杭州市上城区复兴里街道的一家社区食堂，就成为颇受居民喜爱的“网红店”。</p>
+<p>这里<strong>装修风格很文艺</strong>，清晨，晨练完的阿姨、大叔可以来餐厅露台聊天休息；午后，这里又会成为许多年轻人的办公场地。【装修文艺、聊天休息、办公场地】</p>
+<p>有的社区利用食堂空间，在非高峰就餐时间开展厨艺教学、西点烘培等特色课程，丰富居民的日常生活。【食堂空间的利用：开展特色课程，丰富居民生活】</p>
+<p>充分利用场地资源，开发出更多业态，社区食堂也可以成为社区活动的另一个温馨场所。</p>
+<h4 id="5-分论点3："><a href="#5-分论点3：" class="headerlink" title="5.分论点3："></a>5.分论点3：</h4><p>建设队伍，提高养老助餐服务质量。</p>
+<p>食堂厨师由组长担任，经培训合格后持证上岗；送餐员由经过挑选的党员志愿者担任，在送餐的同时，可以和老人们话话家常，及时为他们排忧解难；还有人专门为餐具、厨房消毒，并对每一餐取样留检。</p>
+<p>从加工制作到上门配送，从卫生消毒到用餐检验，各个环节都尽量做到分工协作、各负其责，共同确保餐食安全。</p>
+<p>这也启示我们，开展养老助餐服务，推进社区食堂建设，应注重发挥党员骨干带头作用，以责任岗位带动志愿服务，推动形成积极参与的氛围。</p>
+<h4 id="6-结尾："><a href="#6-结尾：" class="headerlink" title="6.结尾："></a>6.结尾：</h4><p>社区<strong>是提供</strong>基本公共服务<strong>的关键载体</strong>，社区食堂给社区增添了“幸福餐桌”。</p>
+<p>随着供给日益丰富、功能不断完善，社区食堂也在<strong>不断扩大自己的服务半径</strong>，让更多群众受益。</p>
+<p><strong>通过精细化、多元化的服务</strong>，挖掘出更多发展潜力，推动居民共治共建，让社区真正成为居民宜居宜业的家园。</p>
+<p>[注：本文学习自bilibili<a target="_blank" rel="noopener" href="https://space.bilibili.com/497178825">公考隔壁班王老师</a>2023年09月18日《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mz4y157NL/">以为民小事 致敬历史</a>》，并按照我所易于阅读、记忆的格式进行修改，仅供学习交流使用。]</p>
+
+    </article>
+
+  </div>
+  <div class="article-catelogue">
+    <div class="article-catelogue--wrapper">
+      <div class="catelogue catelogue-1">
+        <h3>目录</h3>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%BC%80%E5%A4%B4%EF%BC%9A%E5%BC%80%E7%AF%87%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">1.开头：开篇引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E5%BF%83%E8%AE%BA%E7%82%B9%E6%AE%B5"><span class="toc-number">2.</span> <span class="toc-text">2.中心论点段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%86%E8%AE%BA%E7%82%B91"><span class="toc-number">3.</span> <span class="toc-text">3.分论点1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%88%86%E8%AE%BA%E7%82%B92"><span class="toc-number">4.</span> <span class="toc-text">4.分论点2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%86%E8%AE%BA%E7%82%B93%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">5.分论点3：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BB%93%E5%B0%BE%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">6.结尾：</span></a></li></ol>
+      </div>
+      
+        <div class="catelogue catelogue-2">
+           
+          
+            <p>
+              <span>下一篇</span>
+              <a href="/2023/09/17/第37周20230915星期五 不断加速科技成果转化/">不断加速科技成果转化</a>
+            </p>
+          
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="http://cdn.yangxiang.cc/prism.js"></script>
+
+
+<script>
+  $(document).on('pjax:complete', function() {
+    const tocs = document.querySelector('.toc')
+    const links = tocs ? tocs.querySelectorAll('a') : []
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = decodeURIComponent(e.href)
+        href.search(/#(.*)/)
+        const id = RegExp.$1
+        const target = document.querySelector('#' + id)
+        const top = target.offsetTop
+        document.documentElement.scrollTo({
+          top: top - 100,
+          behavior: 'smooth'
+        })
+        e.preventDefault()
+      })
+    })
+  })
+</script>
+
+
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script>
+  /*页面载入完成后，创建复制按钮*/
+!function (e, t, a) { 
+/* code */
+var initCopyCode = function(){
+    var copyHtml = '';
+    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+    copyHtml += '  <i class="fa fa-globe"></i><span>copy</span>';
+    copyHtml += '</button>';
+    $(".highlight .code").before(copyHtml);
+    new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+            return trigger.nextElementSibling;
+        }
+    });
+}
+initCopyCode();
+}(window, document);
+</script> 
+
+</div>
+      <div class="main-right-wrapper"><div class="main-right">
+  <!-- 公告栏 -->
+  <div class="main-right--board">
+    <div class="main-right--title">
+      <h5>Err...</h5>
+      <i class="iconfont icoo"> ERR</i>
+    </div>
+    <!-- 轮播图 -->
+    <div class="carousel" id="carousel_main">
+      <ul id="div_img">
+        <li class="every_img"><img src="##" id="link_img" onClick="link('_self')" alt="" title="" /></li>
+        <li class="every_img"><img src="#" id="link_img" onClick="link('_self')" alt="" title="" /></li>
+        <li class="every_img"><img src="##" id="link_img" onClick="link( '_self')" alt="" title="" /></li>
+        <li class="every_img"><img src="#" id="link_img" onClick="link('_self')" alt="" title="" /></li>
+        <li class="every_img"><img src="#" id="link_img" onClick="link( '_self')" alt="" title="" /></li>
+      </ul>
+      <ul class="div_circle">
+        <li class=every_circle></li>
+        <li class=every_circle></li>
+        <li class=every_circle></li>
+        <li class=every_circle></li>
+        <li class=every_circle></li>
+      </ul>
+      <div class="btn left">
+        <p class="btn_p">《&nbsp</p>
+      </div>
+      <div class="btn right">
+        <p class="btn_p">&nbsp》</p>
+      </div>
+      <script type="text/javascript">$(function () { var max_num = 4; var time_stop = 4250; var time_swap = 1250; var num = 0; var chosen_circle_color = "#0aa1ed"; var chosen_not_circle_color = "#ffffff"; function every_thing() { $("#div_img").animate({ left: -$(".every_img").eq(0).width() * num }, time_swap); $(".every_circle").eq(num).css("background", chosen_circle_color).siblings('li').css("background", chosen_not_circle_color); } function Right_move() { if (num >= max_num) { num = 0; } else { num++; } every_thing(); } function Left_move() { if (num === 0) { num = max_num; } else { num--; } every_thing(); } $(".every_circle").eq(0).css("background", chosen_circle_color); $("#div_img").width($('.every_img').length * $('.every_img').eq(0).width()); var id = setInterval(Right_move, time_stop); $("#carousel_main").mouseover(function () { clearInterval(id) }); $("#carousel_main").mouseout(function () { id = setInterval(Right_move, time_stop); }); $(".left").click(function () { $("#div_img").stop(); Left_move(); }); $(".right").click(function () { $("#div_img").stop(); Right_move(); }); $(".every_circle").mouseover(function () { num = $(this).index(); $("#div_img").stop(); every_thing(); }); }); function link(jinliweili_Url, quality_target) { window.open(jinliweili_Url, quality_target); }</script>
+    </div>
+    <!-- 下方文字 -->
+    <div class="main-right--content">
+      Errooooooooor</div>
+  </div>
+  <!-- 音乐播放器 -->
+  <div id="aplayer" class="main-right--music"></div>
+  <!-- 小按钮 -->
+  <div class="operate-items">
+    <div class="operate-item backtop">
+      <i class="iconfont icuid"></i>
+      <span>Err</span>
+    </div>
+    <div class="operate-item turden">
+      <i class="iconfont icglun"></i>
+      <span>Err</span>
+    </div>
+  </div>
+  <!-- 尾部 -->
+  <div class="main-right--site">
+    <div class="main-right--power">
+      <p>ERROR.</p>
+
+      <p>error.</p>
+    </div>
+    <p class="main-right--refer">err</p>
+  </div>
+</div>
+<!-- 音乐播放器功能设置 -->
+
+  <script>
+    function setOperateItem() {
+      const reg = /\d{4}\/\d{2}\/\d{2}\/.+/
+      const path = location.pathname
+      const operateDom = document.querySelector('.main-right .operate-items')
+      const commentDom = document.querySelector('.turn-comment')
+      const cateloguDom = document.querySelector('.article-catelogue > .article-catelogue--wrapper');
+
+      if (commentDom) {
+        if (reg.test(path) || path.match(/\/log\/.+/)) {
+          commentDom.classList.remove('hidden')
+          const newDom = operateDom.cloneNode(true);
+          const _backtopDom = newDom.querySelector('.backtop');
+          const _commentDom = newDom.querySelector('.turn-comment');
+          console.log(_commentDom)
+          _backtopDom.addEventListener('click', () => backTopEvent());
+          _commentDom.addEventListener('click', () => commentDomEvent());
+
+          cateloguDom.appendChild(newDom);
+        } else {
+          commentDom.classList.add('hidden')
+        }
+      }
+    }
+
+    setOperateItem()
+    const musics = JSON.parse(`[{"name":"Error","artist":"err","url":"ERR","cover":"/OR"},{"name":"Error","artist":"err","url":"ERR","cover":"/OR"},{"name":"Error","artist":"err","url":"ERR","cover":"/OR"}]`)
+    const ap = new APlayer({
+      container: document.querySelector('#aplayer'),
+      audio: musics,
+    })
+
+    $(document).on('pjax:complete', function () {
+      setOperateItem()
+    })
+
+    document.querySelector('.backtop').addEventListener('click', () => {
+      backTopEvent();
+    })
+    const dom = document.querySelector('.turn-comment')
+    dom && dom.addEventListener('click', () => {
+      commentDomEvent();
+    })
+
+    function backTopEvent() {
+      document.documentElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+
+    function commentDomEvent() {
+      const commentDom = document.querySelector('.comments-intro')
+      if (!commentDom) return
+      const top = commentDom.offsetTop, height = commentDom.offsetHeight
+      document.documentElement.scrollTo({
+        top: top - 2 * height,
+        behavior: 'smooth'
+      })
+    }
+  </script></div>
+    </section>
+  </div>
+  <div id="progress" class="progress"></div>
+
+</body>
+</html>
