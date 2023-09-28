@@ -86,7 +86,117 @@
       }
   }
 </style>
-
+<script>
+  moment.defineLocale('zh-cn', {
+    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
+    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
+    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
+    ongDateFormat : {
+            LT : 'Ah点mm分',
+                            LTS : 'Ah点m分s秒',
+                            L : 'YYYY-MM-DD',
+                            LL : 'YYYY年MMMD日',
+                            LLL : 'YYYY年MMMD日Ah点mm分',
+                            LLLL : 'YYYY年MMMD日ddddAh点mm分',
+                            l : 'YYYY-MM-DD',
+                            ll : 'YYYY年MMMD日',
+                            lll : 'YYYY年MMMD日Ah点mm分',
+                            llll : 'YYYY年MMMD日ddddAh点mm分'
+                        },
+                        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
+                        meridiemHour: function (hour, meridiem) {
+                            if (hour === 12) {
+                                hour = 0;
+                            }
+                            if (meridiem === '凌晨' || meridiem === '早上' ||
+                                    meridiem === '上午') {
+                                return hour;
+                            } else if (meridiem === '下午' || meridiem === '晚上') {
+                                return hour + 12;
+                            } else {
+                                // '中午'
+                                return hour >= 11 ? hour : hour + 12;
+                            }
+                        },
+                        meridiem : function (hour, minute, isLower) {
+                            var hm = hour * 100 + minute;
+                            if (hm < 600) {
+                                return '凌晨';
+                            } else if (hm < 900) {
+                                return '早上';
+                            } else if (hm < 1130) {
+                                return '上午';
+                            } else if (hm < 1230) {
+                                return '中午';
+                            } else if (hm < 1800) {
+                                return '下午';
+                            } else {
+                                return '晚上';
+                            }
+                        },
+                        calendar : {
+                            sameDay : function () {
+                                return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';
+                            },
+                            nextDay : function () {
+                                return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';
+                            },
+                            lastDay : function () {
+                                return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';
+                            },
+                            nextWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            lastWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            sameElse : 'LL'
+                        },
+                        ordinalParse: /\d{1,2}(日|月|周)/,
+                        ordinal : function (number, period) {
+                            switch (period) {
+                            case 'd':
+                            case 'D':
+                            case 'DDD':
+                                return number + '日';
+                            case 'M':
+                                return number + '月';
+                            case 'w':
+                            case 'W':
+                                return number + '周';
+                            default:
+                                return number;
+                            }
+                        },
+                        relativeTime : {
+                            future : '%s内',
+                            past : '%s前',
+                            s : '几秒',
+                            m : '1 分钟',
+                            mm : '%d 分钟',
+                            h : '1 小时',
+                            hh : '%d 小时',
+                            d : '1 天',
+                            dd : '%d 天',
+                            M : '1 个月',
+                            MM : '%d 个月',
+                            y : '1 年',
+                            yy : '%d 年'
+                        },
+                        week : {
+                            dow : 1, // Monday is the first day of the week.
+                            doy : 4  // The week that contains Jan 4th is the first week of the year.
+                        }
+                    });
+</script>
 <body class="radial-gradient-demo_Thanks">
   <!-- 新增加载效果 2023、08、06 08:11 -->
   <style>
@@ -399,7 +509,7 @@ pre {
           
           <p class="article-info--date">创建日期：2023-08-24 21:41:02</p>
           
-          <!-- <p>最后修改日期： 2023-08-24 22:12:57 Thursday</p> -->
+          <!-- <p>最后修改日期： 2023-09-29 01:37:13 Friday</p> -->
         </div>
         <img src="https://img1.baidu.com/it/u=3840473512,1088605131&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=746" alt="" class="article-cover">
       </div>
@@ -418,8 +528,8 @@ pre {
 <h4 id="4-分论点2：分论点（协同合力）"><a href="#4-分论点2：分论点（协同合力）" class="headerlink" title="4.分论点2：分论点（协同合力）"></a>4.分论点2：分论点（协同合力）</h4><p>横向联动，强化部门协同。【部门互动：“政府的很多部门”】</p>
 <p>民有所呼、我有所应，是基层治理的“必答题”。这个“应”，要有“怎么看”的态度，更要有“怎么办”的行动。</p>
 <p>现实中，群众难办事项往往牵扯多部门、多层级。不同部门，目标侧重不同、难处各异，如何有效形成合力？</p>
-<p>关键是转观念，各部门提出建议，互相帮助改进。提升治理效能、为民办实事，尤需胸怀大局、强化协同，增强服务主动性和补位意识，形成破解难题的“实干联合体”。【态度上】</p>
-<p>政府的回应速度不断加快、回应方式不断优化，就能为推动问题解决提供有力支撑。让有温度的建议与有力度的方案同频共振，方能不断增强民生福祉。【行动上】【本段，申论大作文<strong>治理合力</strong>模块】</p>
+<p>关键在于转观念，各部门提出建议，互相帮助改进。提升治理效能、为民办实事，尤需胸怀大局、强化协同，增强服务主动性和补位意识，形成破解难题的“实干联合体”。【态度上】</p>
+<p>政府的回应速度不断加快、回应方式不断优化，就能为推动问题解决提供有力支撑。让有温度的建议与有力度的方案同频共振，方能不断增强民生福祉。【行动上】</p>
 <h4 id="5-分论点3：分论点（上下联动）"><a href="#5-分论点3：分论点（上下联动）" class="headerlink" title="5.分论点3：分论点（上下联动）"></a>5.分论点3：分论点（上下联动）</h4><p>上下联动，形成良性互动。</p>
 <p>基层治理<strong>是一个系统工程</strong>，上下联动、协同推进，才能更好了解社情民意，以新方法破解新问题，用新思路带动新发展。【整体上可以写一写】</p>
 <p>群众愿提议、干部善建议、部门能协同、政策好落地，方能构成一种良性互动。</p>

@@ -86,7 +86,117 @@
       }
   }
 </style>
-
+<script>
+  moment.defineLocale('zh-cn', {
+    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
+    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
+    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
+    ongDateFormat : {
+            LT : 'Ah点mm分',
+                            LTS : 'Ah点m分s秒',
+                            L : 'YYYY-MM-DD',
+                            LL : 'YYYY年MMMD日',
+                            LLL : 'YYYY年MMMD日Ah点mm分',
+                            LLLL : 'YYYY年MMMD日ddddAh点mm分',
+                            l : 'YYYY-MM-DD',
+                            ll : 'YYYY年MMMD日',
+                            lll : 'YYYY年MMMD日Ah点mm分',
+                            llll : 'YYYY年MMMD日ddddAh点mm分'
+                        },
+                        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
+                        meridiemHour: function (hour, meridiem) {
+                            if (hour === 12) {
+                                hour = 0;
+                            }
+                            if (meridiem === '凌晨' || meridiem === '早上' ||
+                                    meridiem === '上午') {
+                                return hour;
+                            } else if (meridiem === '下午' || meridiem === '晚上') {
+                                return hour + 12;
+                            } else {
+                                // '中午'
+                                return hour >= 11 ? hour : hour + 12;
+                            }
+                        },
+                        meridiem : function (hour, minute, isLower) {
+                            var hm = hour * 100 + minute;
+                            if (hm < 600) {
+                                return '凌晨';
+                            } else if (hm < 900) {
+                                return '早上';
+                            } else if (hm < 1130) {
+                                return '上午';
+                            } else if (hm < 1230) {
+                                return '中午';
+                            } else if (hm < 1800) {
+                                return '下午';
+                            } else {
+                                return '晚上';
+                            }
+                        },
+                        calendar : {
+                            sameDay : function () {
+                                return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';
+                            },
+                            nextDay : function () {
+                                return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';
+                            },
+                            lastDay : function () {
+                                return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';
+                            },
+                            nextWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            lastWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            sameElse : 'LL'
+                        },
+                        ordinalParse: /\d{1,2}(日|月|周)/,
+                        ordinal : function (number, period) {
+                            switch (period) {
+                            case 'd':
+                            case 'D':
+                            case 'DDD':
+                                return number + '日';
+                            case 'M':
+                                return number + '月';
+                            case 'w':
+                            case 'W':
+                                return number + '周';
+                            default:
+                                return number;
+                            }
+                        },
+                        relativeTime : {
+                            future : '%s内',
+                            past : '%s前',
+                            s : '几秒',
+                            m : '1 分钟',
+                            mm : '%d 分钟',
+                            h : '1 小时',
+                            hh : '%d 小时',
+                            d : '1 天',
+                            dd : '%d 天',
+                            M : '1 个月',
+                            MM : '%d 个月',
+                            y : '1 年',
+                            yy : '%d 年'
+                        },
+                        week : {
+                            dow : 1, // Monday is the first day of the week.
+                            doy : 4  // The week that contains Jan 4th is the first week of the year.
+                        }
+                    });
+</script>
 <body class="radial-gradient-demo_Thanks">
   <!-- 新增加载效果 2023、08、06 08:11 -->
   <style>
@@ -399,14 +509,14 @@ pre {
           
           <p class="article-info--date">创建日期：2023-08-11 21:30:24</p>
           
-          <!-- <p>最后修改日期： 2023-08-08 17:58:00 Tuesday</p> -->
+          <!-- <p>最后修改日期： 2023-09-29 01:21:42 Friday</p> -->
         </div>
         <img src="https://img1.baidu.com/it/u=3840473512,1088605131&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=746" alt="" class="article-cover">
       </div>
     </div>
     <article class="article-content" style="font-family: monospace;font-size: 15px;text-indent: 2em;">
       <h4 id="1-中心论点段：论点（按规律办事、按规矩做事）"><a href="#1-中心论点段：论点（按规律办事、按规矩做事）" class="headerlink" title="1.中心论点段：论点（按规律办事、按规矩做事）"></a>1.中心论点段：论点（按规律办事、按规矩做事）</h4><p>“按规律办事、按规矩做事，是党员干部必须坚守的原则。 ”</p>
-<p>7月1日出版的第13期《求是》杂志发表……重要文章，要求党员干部干事创业必须实事求是、求真务实，来不得半点虚浮。【权威描述，很有分量】</p>
+<p>党员干部干事创业必须实事求是、求真务实，来不得半点虚浮。</p>
 <h4 id="2-展开段：下定义"><a href="#2-展开段：下定义" class="headerlink" title="2.展开段：下定义"></a>2.展开段：下定义</h4><p><strong>规律</strong>，是事物发展进程中所固有的、本质的、必然的、稳定的联系。<strong>按规律办事</strong>，就是要坚持实事求是、求真务实，从实际出发谋划工作，使提出的点子、政策、方案等符合实际情况、符合客观规律、符合科学精神。</p>
 <p><strong>规矩</strong>，是约束人们日常行为的一定规则。对党员干部来说，<strong>按规矩做事</strong>，就是要严格遵守党章、党的纪律、国家法律，自觉遵循党在长期实践中形成的优良传统和工作惯例，不越规、不逾矩。</p>
 <h4 id="3-分论点1：分论点（按规律办事）"><a href="#3-分论点1：分论点（按规律办事）" class="headerlink" title="3.分论点1：分论点（按规律办事）"></a>3.分论点1：分论点（按规律办事）</h4><p>按规律办事，事业才能不断进步。</p>

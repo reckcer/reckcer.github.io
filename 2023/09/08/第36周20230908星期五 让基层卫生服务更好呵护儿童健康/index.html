@@ -86,7 +86,117 @@
       }
   }
 </style>
-
+<script>
+  moment.defineLocale('zh-cn', {
+    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
+    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
+    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
+    ongDateFormat : {
+            LT : 'Ah点mm分',
+                            LTS : 'Ah点m分s秒',
+                            L : 'YYYY-MM-DD',
+                            LL : 'YYYY年MMMD日',
+                            LLL : 'YYYY年MMMD日Ah点mm分',
+                            LLLL : 'YYYY年MMMD日ddddAh点mm分',
+                            l : 'YYYY-MM-DD',
+                            ll : 'YYYY年MMMD日',
+                            lll : 'YYYY年MMMD日Ah点mm分',
+                            llll : 'YYYY年MMMD日ddddAh点mm分'
+                        },
+                        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
+                        meridiemHour: function (hour, meridiem) {
+                            if (hour === 12) {
+                                hour = 0;
+                            }
+                            if (meridiem === '凌晨' || meridiem === '早上' ||
+                                    meridiem === '上午') {
+                                return hour;
+                            } else if (meridiem === '下午' || meridiem === '晚上') {
+                                return hour + 12;
+                            } else {
+                                // '中午'
+                                return hour >= 11 ? hour : hour + 12;
+                            }
+                        },
+                        meridiem : function (hour, minute, isLower) {
+                            var hm = hour * 100 + minute;
+                            if (hm < 600) {
+                                return '凌晨';
+                            } else if (hm < 900) {
+                                return '早上';
+                            } else if (hm < 1130) {
+                                return '上午';
+                            } else if (hm < 1230) {
+                                return '中午';
+                            } else if (hm < 1800) {
+                                return '下午';
+                            } else {
+                                return '晚上';
+                            }
+                        },
+                        calendar : {
+                            sameDay : function () {
+                                return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';
+                            },
+                            nextDay : function () {
+                                return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';
+                            },
+                            lastDay : function () {
+                                return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';
+                            },
+                            nextWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            lastWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            sameElse : 'LL'
+                        },
+                        ordinalParse: /\d{1,2}(日|月|周)/,
+                        ordinal : function (number, period) {
+                            switch (period) {
+                            case 'd':
+                            case 'D':
+                            case 'DDD':
+                                return number + '日';
+                            case 'M':
+                                return number + '月';
+                            case 'w':
+                            case 'W':
+                                return number + '周';
+                            default:
+                                return number;
+                            }
+                        },
+                        relativeTime : {
+                            future : '%s内',
+                            past : '%s前',
+                            s : '几秒',
+                            m : '1 分钟',
+                            mm : '%d 分钟',
+                            h : '1 小时',
+                            hh : '%d 小时',
+                            d : '1 天',
+                            dd : '%d 天',
+                            M : '1 个月',
+                            MM : '%d 个月',
+                            y : '1 年',
+                            yy : '%d 年'
+                        },
+                        week : {
+                            dow : 1, // Monday is the first day of the week.
+                            doy : 4  // The week that contains Jan 4th is the first week of the year.
+                        }
+                    });
+</script>
 <body class="radial-gradient-demo_Thanks">
   <!-- 新增加载效果 2023、08、06 08:11 -->
   <style>
@@ -399,7 +509,7 @@ pre {
           
           <p class="article-info--date">创建日期：2023-09-08 21:05:21</p>
           
-          <!-- <p>最后修改日期： 2023-09-11 23:56:38 Monday</p> -->
+          <!-- <p>最后修改日期： 2023-09-29 01:57:09 Friday</p> -->
         </div>
         <img src="https://img1.baidu.com/it/u=3840473512,1088605131&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=746" alt="" class="article-cover">
       </div>
@@ -421,7 +531,8 @@ pre {
 <p>这需要基层卫生服务机构加强与街道、社区的联系，对辖区适龄儿童建立健康台账，及时掌握信息变化，做好资料更新和交接。【定期跟踪】</p>
 <p>在阶段性身体检查、重点疫苗接种等一些关键节点，更应该主动作为、预先提示，为有适龄儿童的家庭，特别是多孩家庭更好的提供服务。【动态调整】</p>
 <h4 id="5-分论点3"><a href="#5-分论点3" class="headerlink" title="5.分论点3"></a>5.分论点3</h4><p>增加持续性投入。</p>
-<p>定期对基层卫生服务人员<strong>加强</strong>儿科方面的<strong>专业知识培训</strong>，推动<strong>落实</strong>将0—6岁儿童健康管理纳入<strong>家庭医生签约服务</strong>，在条件允许的情况下为基层服务机构<strong>配备、更新</strong>儿科医疗卫生<strong>设备</strong>，还可以通过<strong>智能化平台建设</strong>提升基层卫生服务的信息化水平。【不谈钱，只来事：加强培训；落实儿童家庭医生签约服务；配备、更新设备；建设智能化平台】</p>
+<p>持续提升基层卫生服务水平，不是单场“百米赛”，不可能一蹴而就，也不可能一劳永逸，而是一个接一个的“马拉松”，比拼的不是瞬时的精彩，而是长久的稳健。</p>
+<p>需要定期对基层卫生服务人员<strong>加强</strong>儿科方面的<strong>专业知识培训</strong>，推动<strong>落实</strong>将0—6岁儿童健康管理纳入<strong>家庭医生签约服务</strong>，在条件允许的情况下为基层服务机构<strong>配备、更新</strong>儿科医疗卫生<strong>设备</strong>，还可以通过<strong>智能化平台建设</strong>提升基层卫生服务的信息化水平。【不谈钱，只来事：加强培训；落实儿童家庭医生签约服务；配备、更新设备；建设智能化平台】</p>
 <h4 id="6-结尾："><a href="#6-结尾：" class="headerlink" title="6.结尾："></a>6.结尾：</h4><p>少年强则国强，少年进步则国进步。</p>
 <p>只有持续提升基层卫生服务水平，更好呵护儿童健康，才能培土护苗、聚木成林，让少年儿童健康成长，为实现中华民族伟大复兴的中国梦时刻准备着。</p>
 <p>[注：本文学习自bilibili<a target="_blank" rel="noopener" href="https://space.bilibili.com/497178825">公考隔壁班王老师</a>2023年09月08日《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PH4y1X7gL/">行政执法申论必背人民日报范文！</a>》，并按照我所易于阅读、记忆的格式进行修改，仅供学习交流使用。]</p>

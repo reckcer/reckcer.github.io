@@ -86,7 +86,117 @@
       }
   }
 </style>
-
+<script>
+  moment.defineLocale('zh-cn', {
+    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
+    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
+    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
+    ongDateFormat : {
+            LT : 'Ah点mm分',
+                            LTS : 'Ah点m分s秒',
+                            L : 'YYYY-MM-DD',
+                            LL : 'YYYY年MMMD日',
+                            LLL : 'YYYY年MMMD日Ah点mm分',
+                            LLLL : 'YYYY年MMMD日ddddAh点mm分',
+                            l : 'YYYY-MM-DD',
+                            ll : 'YYYY年MMMD日',
+                            lll : 'YYYY年MMMD日Ah点mm分',
+                            llll : 'YYYY年MMMD日ddddAh点mm分'
+                        },
+                        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
+                        meridiemHour: function (hour, meridiem) {
+                            if (hour === 12) {
+                                hour = 0;
+                            }
+                            if (meridiem === '凌晨' || meridiem === '早上' ||
+                                    meridiem === '上午') {
+                                return hour;
+                            } else if (meridiem === '下午' || meridiem === '晚上') {
+                                return hour + 12;
+                            } else {
+                                // '中午'
+                                return hour >= 11 ? hour : hour + 12;
+                            }
+                        },
+                        meridiem : function (hour, minute, isLower) {
+                            var hm = hour * 100 + minute;
+                            if (hm < 600) {
+                                return '凌晨';
+                            } else if (hm < 900) {
+                                return '早上';
+                            } else if (hm < 1130) {
+                                return '上午';
+                            } else if (hm < 1230) {
+                                return '中午';
+                            } else if (hm < 1800) {
+                                return '下午';
+                            } else {
+                                return '晚上';
+                            }
+                        },
+                        calendar : {
+                            sameDay : function () {
+                                return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';
+                            },
+                            nextDay : function () {
+                                return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';
+                            },
+                            lastDay : function () {
+                                return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';
+                            },
+                            nextWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            lastWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            sameElse : 'LL'
+                        },
+                        ordinalParse: /\d{1,2}(日|月|周)/,
+                        ordinal : function (number, period) {
+                            switch (period) {
+                            case 'd':
+                            case 'D':
+                            case 'DDD':
+                                return number + '日';
+                            case 'M':
+                                return number + '月';
+                            case 'w':
+                            case 'W':
+                                return number + '周';
+                            default:
+                                return number;
+                            }
+                        },
+                        relativeTime : {
+                            future : '%s内',
+                            past : '%s前',
+                            s : '几秒',
+                            m : '1 分钟',
+                            mm : '%d 分钟',
+                            h : '1 小时',
+                            hh : '%d 小时',
+                            d : '1 天',
+                            dd : '%d 天',
+                            M : '1 个月',
+                            MM : '%d 个月',
+                            y : '1 年',
+                            yy : '%d 年'
+                        },
+                        week : {
+                            dow : 1, // Monday is the first day of the week.
+                            doy : 4  // The week that contains Jan 4th is the first week of the year.
+                        }
+                    });
+</script>
 <body class="radial-gradient-demo_Thanks">
   <!-- 新增加载效果 2023、08、06 08:11 -->
   <style>
@@ -399,7 +509,7 @@ pre {
           
           <p class="article-info--date">创建日期：2023-07-21 21:38:08</p>
           
-          <!-- <p>最后修改日期： 2023-07-21 22:29:28 Friday</p> -->
+          <!-- <p>最后修改日期： 2023-09-29 00:58:54 Friday</p> -->
         </div>
         <img src="https://img1.baidu.com/it/u=3840473512,1088605131&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=746" alt="" class="article-cover">
       </div>
@@ -410,7 +520,7 @@ pre {
 <p><strong>加强</strong>社区基层党组织建设、<strong>加强和改进</strong>社区工作、<strong>推动</strong>更多资源向社区倾斜，<strong>对于提高居民生活品质、提升群众满意度具有重要意义</strong>。</p>
 <p>2.中心论点段：权威表述+具体措施和总结</p>
 <p>……指出：“要发挥好基层党组织战斗堡垒作用，努力把社区建设成为人民群众的幸福家园。”【权威表述】</p>
-<p>近年来，陕西省咸阳市秦都区从夯实党建基础做起，打通联系群众、服务群众的<strong>“最后一公里”</strong>，大力推进幸福和谐社区建设，不断增强人民群众获得感、幸福感、安全感。</p>
+<p>近年来，X省X市X区从夯实党建基础做起，打通联系群众、服务群众的<strong>“最后一公里”</strong>，大力推进幸福和谐社区建设，不断增强人民群众获得感、幸福感、安全感。</p>
 <p>3.分论点1：论点（服务水平）+过渡引入+措施和总结（线上+线下）</p>
 <p>拓展党建阵地，提升服务水平。</p>
 <p>社区<strong>治理得好不好，关键在基层党组织、在广大党员</strong>。我们下大力气加强社区服务型党组织建设，着力提升服务能力和水平，确保基层治理始终与时代发展和群众需要同频共振。【乡村振兴、社会治理、生态保护均可，毕竟少不了人，少不了干部】</p>

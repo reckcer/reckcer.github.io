@@ -86,7 +86,117 @@
       }
   }
 </style>
-
+<script>
+  moment.defineLocale('zh-cn', {
+    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
+    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
+    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
+    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
+    ongDateFormat : {
+            LT : 'Ah点mm分',
+                            LTS : 'Ah点m分s秒',
+                            L : 'YYYY-MM-DD',
+                            LL : 'YYYY年MMMD日',
+                            LLL : 'YYYY年MMMD日Ah点mm分',
+                            LLLL : 'YYYY年MMMD日ddddAh点mm分',
+                            l : 'YYYY-MM-DD',
+                            ll : 'YYYY年MMMD日',
+                            lll : 'YYYY年MMMD日Ah点mm分',
+                            llll : 'YYYY年MMMD日ddddAh点mm分'
+                        },
+                        meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
+                        meridiemHour: function (hour, meridiem) {
+                            if (hour === 12) {
+                                hour = 0;
+                            }
+                            if (meridiem === '凌晨' || meridiem === '早上' ||
+                                    meridiem === '上午') {
+                                return hour;
+                            } else if (meridiem === '下午' || meridiem === '晚上') {
+                                return hour + 12;
+                            } else {
+                                // '中午'
+                                return hour >= 11 ? hour : hour + 12;
+                            }
+                        },
+                        meridiem : function (hour, minute, isLower) {
+                            var hm = hour * 100 + minute;
+                            if (hm < 600) {
+                                return '凌晨';
+                            } else if (hm < 900) {
+                                return '早上';
+                            } else if (hm < 1130) {
+                                return '上午';
+                            } else if (hm < 1230) {
+                                return '中午';
+                            } else if (hm < 1800) {
+                                return '下午';
+                            } else {
+                                return '晚上';
+                            }
+                        },
+                        calendar : {
+                            sameDay : function () {
+                                return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';
+                            },
+                            nextDay : function () {
+                                return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';
+                            },
+                            lastDay : function () {
+                                return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';
+                            },
+                            nextWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() - startOfWeek.unix() >= 7 * 24 * 3600 ? '[下]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            lastWeek : function () {
+                                var startOfWeek, prefix;
+                                startOfWeek = moment().startOf('week');
+                                prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';
+                                return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
+                            },
+                            sameElse : 'LL'
+                        },
+                        ordinalParse: /\d{1,2}(日|月|周)/,
+                        ordinal : function (number, period) {
+                            switch (period) {
+                            case 'd':
+                            case 'D':
+                            case 'DDD':
+                                return number + '日';
+                            case 'M':
+                                return number + '月';
+                            case 'w':
+                            case 'W':
+                                return number + '周';
+                            default:
+                                return number;
+                            }
+                        },
+                        relativeTime : {
+                            future : '%s内',
+                            past : '%s前',
+                            s : '几秒',
+                            m : '1 分钟',
+                            mm : '%d 分钟',
+                            h : '1 小时',
+                            hh : '%d 小时',
+                            d : '1 天',
+                            dd : '%d 天',
+                            M : '1 个月',
+                            MM : '%d 个月',
+                            y : '1 年',
+                            yy : '%d 年'
+                        },
+                        week : {
+                            dow : 1, // Monday is the first day of the week.
+                            doy : 4  // The week that contains Jan 4th is the first week of the year.
+                        }
+                    });
+</script>
 <body class="radial-gradient-demo_Thanks">
   <!-- 新增加载效果 2023、08、06 08:11 -->
   <style>
@@ -388,7 +498,7 @@ pre {
           
           <div class="article-info--categories">
             <span>分类：</span>
-            <a class="category-link" href="/categories/%E8%B7%9F%E7%9D%80%E6%97%A5%E6%8A%A5%E5%AD%A6%E7%94%B3%E8%AE%BA/">跟着日报学申论</a>
+            <a class="category-link" href="/categories/%E8%B7%9F%E7%9D%80%E6%97%A5%E6%8A%A5%E4%BB%BF%E7%94%B3%E8%AE%BA/">跟着日报仿申论</a>
           </div>
           
           
@@ -399,7 +509,7 @@ pre {
           
           <p class="article-info--date">创建日期：2023-09-05 21:27:06</p>
           
-          <!-- <p>最后修改日期： 2023-09-04 21:38:14 Monday</p> -->
+          <!-- <p>最后修改日期： 2023-09-29 00:55:29 Friday</p> -->
         </div>
         <img src="https://img1.baidu.com/it/u=3840473512,1088605131&fm=253&fmt=auto&app=120&f=JPEG?w=1080&h=746" alt="" class="article-cover">
       </div>
@@ -416,18 +526,20 @@ pre {
 <p>走进生活，走进实践，将“有字之书”和“无字之书”结合起来，才能让青年人更好地汲取智慧、丰富思想、促练精神。</p>
 <p>在贵州师范大学有一个“1家1”全家福拍摄团，从2012年起，拍摄团26次走进贵州省的80多个村寨，免费为近7000个农村家庭拍摄了全家福。一届届学生背着相机、扛着帐篷，在深入乡土中国的过程中锻炼成长，更用镜头记录了11年间的山乡巨变。</p>
 <p>用脚步丈量祖国大地，不仅能开扩眼界与胸襟，还能在亲眼见证时代变迁的过程中升起自豪感、厚植起自信心、激扬起家国情，真正成为“胸中有丘壑，眼里存山河”的新时代青年。</p>
-<h4 id="4-分论点2：分论点（多经风雨磨练）"><a href="#4-分论点2：分论点（多经风雨磨练）" class="headerlink" title="4.分论点2：分论点（多经风雨磨练）"></a>4.分论点2：分论点（多经风雨磨练）</h4><p>知行合一，要多经风雨磨练。</p>
+<h4 id="4-分论点2：分论点（磨砺实干奋斗）"><a href="#4-分论点2：分论点（磨砺实干奋斗）" class="headerlink" title="4.分论点2：分论点（磨砺实干奋斗）"></a>4.分论点2：分论点（磨砺实干奋斗）</h4><p>知行合一，要多经风雨磨练。</p>
 <p>淬炼挺拔的精神，离不开社会的熔炉；增强干事的本领，少不了现实的磨砺。</p>
-<p>85后青年杨宁大学毕业后，毅然回到生她养她的村庄，靠着自身所学和拼劲干劲，在大山苗寨挥洒青春和汗水，带领乡亲们走上了致富路。</p>
+<p>青春由磨砺出彩，人生因奋斗升华。每一项事业，不论大小，都是踏踏实实一点一滴拼出来、干出来的。</p>
+<p>青年时期是苦练本领、增长才干的黄金时期，最忌好高骛远、浮于空想，最怕做事三天打鱼、两天晒网。</p>
 <p>刀在石上磨，人在事上练。不经风雨、不见世面是难以成大器的。</p>
-<p>实践是大课堂、是练兵场，广大青年勇于到更广阔的天地、更复杂的环境中去研究现实矛盾，实践胸中所学，方能在一次次摸爬滚打中褪去稚气、在一次次迎难而上中增添勇气、在一次次爬坡过坎中沉淀底气。</p>
+<p>实践是大课堂、是练兵场，广大青年勇于到更广阔的天地、更复杂的环境中去研究现实矛盾，实践胸中所学，方能在一次次摸爬滚打中褪去稚气、在一次次迎难而上中增添勇气、在一次次爬坡过坎中沉淀底气，自信自立、务实奋斗、善作善成，梦想才不是空想，未来也会更加美好。</p>
 <h4 id="5-分论点3：分论点（学会无私奉献）"><a href="#5-分论点3：分论点（学会无私奉献）" class="headerlink" title="5.分论点3：分论点（学会无私奉献）"></a>5.分论点3：分论点（学会无私奉献）</h4><p>知行合一，还要学会无私奉献。</p>
 <p>现在，有的年轻人感到困惑，不知怎样确立自己的人生目标和努力方向，如何让所思所学更好满足社会所需？</p>
 <p>看村街巷道，博士、硕士医疗服务队为村民免费义诊，宣讲卫生健康知识；看田间地头，回乡返乡大学生教村民架起手机，通过直播拓宽农产品销路；看赛事场馆，志愿者们以“最美的微笑与热情”服务，擦亮阳光向上的青春美丽名片。</p>
 <p>正是这一次次的志愿服务、实践历练中，他们逐渐找到了心中热爱、明晰了努力方向、蓄积了向上力量。</p>
+<p>实践充分证明，把个人奋斗融入民族复兴的时代洪流，与时代同步伐、与祖国共命运、与人民齐奋斗，定能成就一番事业、更好实现人生价值。</p>
 <p>对于青年人来说，多到实践中去探寻、去体验，也许就能找到自己心中的答案。</p>
 <h4 id="6-结尾："><a href="#6-结尾：" class="headerlink" title="6.结尾："></a>6.结尾：</h4><p>“百舸争流千帆竞，波涛在后岸在前。”【“潮平两岸阔，风正一帆悬”“雄关漫道真如铁，而今迈步从头越”“风雨多经人不老，关山初度路犹长”】</p>
-<p>新时代中国青年生逢其时、重任在肩。不断学习、不断实践，带着理论知识寻找实践坐标，带着心中热爱奔赴山海，广大青年一定能收获宝贵的成长、成就精彩的事业，书写更有价值的无悔青春。</p>
+<p>新时代中国青年生逢其时、重任在肩。不断学习、不断实践，带着理论知识寻找实践坐标，带着心中热爱奔赴山海，广大青年一定能收获宝贵的成长、成就精彩的事业，书写更有价值的无悔青春，忘我付出、专注向前，不负时代、不负韶华，让青春之花在祖国最需要的地方绽放。</p>
 <p>[注：本文学习自 bilibili <a target="_blank" rel="noopener" href="https://space.bilibili.com/497178825">公考隔壁班王老师</a>  2023 年 09 月 05 日《<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17h4y1v7Nh/">每天半小时，申论80分！</a>》，并按照我所易于阅读、记忆的格式进行修改，仅供学习交流使用。]</p>
 
     </article>
@@ -437,7 +549,7 @@ pre {
     <div class="article-catelogue--wrapper">
       <div class="catelogue catelogue-1">
         <h3>目录</h3>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%BC%80%E5%A4%B4%EF%BC%9A%E5%BC%80%E7%AF%87%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">1.开头：开篇引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E5%BF%83%E8%AE%BA%E7%82%B9%E6%AE%B5"><span class="toc-number">2.</span> <span class="toc-text">2.中心论点段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%86%E8%AE%BA%E7%82%B91%EF%BC%9A%E5%88%86%E8%AE%BA%E7%82%B9%EF%BC%88%E5%A4%9A%E8%AF%BB%E2%80%9C%E6%97%A0%E5%AD%97%E4%B9%8B%E4%B9%A6%E2%80%9D%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">3.分论点1：分论点（多读“无字之书”）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%88%86%E8%AE%BA%E7%82%B92%EF%BC%9A%E5%88%86%E8%AE%BA%E7%82%B9%EF%BC%88%E5%A4%9A%E7%BB%8F%E9%A3%8E%E9%9B%A8%E7%A3%A8%E7%BB%83%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">4.分论点2：分论点（多经风雨磨练）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%86%E8%AE%BA%E7%82%B93%EF%BC%9A%E5%88%86%E8%AE%BA%E7%82%B9%EF%BC%88%E5%AD%A6%E4%BC%9A%E6%97%A0%E7%A7%81%E5%A5%89%E7%8C%AE%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">5.分论点3：分论点（学会无私奉献）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BB%93%E5%B0%BE%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">6.结尾：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%BC%80%E5%A4%B4%EF%BC%9A%E5%BC%80%E7%AF%87%E5%BC%95%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">1.开头：开篇引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E5%BF%83%E8%AE%BA%E7%82%B9%E6%AE%B5"><span class="toc-number">2.</span> <span class="toc-text">2.中心论点段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%86%E8%AE%BA%E7%82%B91%EF%BC%9A%E5%88%86%E8%AE%BA%E7%82%B9%EF%BC%88%E5%A4%9A%E8%AF%BB%E2%80%9C%E6%97%A0%E5%AD%97%E4%B9%8B%E4%B9%A6%E2%80%9D%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">3.分论点1：分论点（多读“无字之书”）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%88%86%E8%AE%BA%E7%82%B92%EF%BC%9A%E5%88%86%E8%AE%BA%E7%82%B9%EF%BC%88%E7%A3%A8%E7%A0%BA%E5%AE%9E%E5%B9%B2%E5%A5%8B%E6%96%97%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">4.分论点2：分论点（磨砺实干奋斗）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%86%E8%AE%BA%E7%82%B93%EF%BC%9A%E5%88%86%E8%AE%BA%E7%82%B9%EF%BC%88%E5%AD%A6%E4%BC%9A%E6%97%A0%E7%A7%81%E5%A5%89%E7%8C%AE%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">5.分论点3：分论点（学会无私奉献）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BB%93%E5%B0%BE%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">6.结尾：</span></a></li></ol>
       </div>
       
         <div class="catelogue catelogue-2">
