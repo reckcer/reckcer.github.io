@@ -216,18 +216,19 @@
         <i class="iconfont icon-right"></i>
       </a>
     
+     <% if (site.posts.length > 10) { %>
+        <div class="page unullier">
+          <%- paginator({
+            total: page.total,
+            prev_text: '<',
+            next_text: '>',
+          }) %>
+        </div>
+      <% } %>
   </nav>
 
         
   <div class="comments" id="comments">
-    
-      <script src="https://utteranc.es/client.js"
-        repo="meannoharm/meannoharm.github.io"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-      </script>
     
   </div>
 
